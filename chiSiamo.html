@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi Siamo - Egidio Carlino Trasporti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Ritarda la chiusura del dropdown di 300ms
+  document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
+    let timeout;
+    drop.addEventListener('mouseenter', function(){
+      clearTimeout(timeout);
+      drop.classList.add('show');
+      const menu = drop.querySelector('.dropdown-menu');
+      if(menu) menu.classList.add('show');
+    });
+    drop.addEventListener('mouseleave', function(){
+      timeout = setTimeout(function(){
+        drop.classList.remove('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.remove('show');
+      }, 300);
+    });
+  });
+</script>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
+  <div class="container-fluid">
+    <div class="logo-container">
+      <img src="img/logo.png" class="logo" alt="Logo">
+      <img src="img/image.png" class="logo-text" alt="Testo CNSI">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+        <li class="nav-item dropdown" id="serviziDropdownLi">
+          <a class="nav-link fw-bold active dropdown-toggle" href="servizi.html" id="serviziDropdown">
+            Servizi
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
+            <li><a class="dropdown-item" href="scavi.html"><i class="bi bi-truck"></i>Scavi e movimento terra</a></li>
+            <li><a class="dropdown-item" href="trasporti.html"><i class="bi bi-box-seam"></i>Trasporto e fornitura materiali edili</a></li>
+            <li><a class="dropdown-item" href="demolizione.html"><i class="bi bi-building"></i>Demolizione</a></li>
+            <li><a class="dropdown-item" href="cassoni.html"><i class="bi bi-inboxes"></i>Noleggio Cassoni</a></li>
+            <li><a class="dropdown-item" href="deposito.html"><i class="bi bi-archive"></i>Deposito materiali edili</a></li>
+            <li><a class="dropdown-item" href="facchinaggio.html"><i class="bi bi-person-workspace"></i>Facchinaggio</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="chiSiamo.html">Chi Siamo</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="contatti.html">Contatti</a></li>
+      </ul>
+      <a class="btn btn-warning ms-4 fw-bold" href="tel:+393895472706" style="border-radius:1.5em;">+39 389 547 2706</a>
+    </div>
+  </div>
+</nav>
+  <section class="container py-5">
+  <div class="row align-items-center g-5">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <!-- Immagine unica che riempie la colonna sinistra -->
+      <img src="img/F84561E2-36C0-45C7-902E-0B52F95FAEB1_1_102_o.jpeg" alt="Egidio Carlino" class="img-fluid rounded shadow w-100" style="height:100%; object-fit:cover; max-height:640px;">
+    </div>
+
+    <div class="col-lg-6">
+      <h1 class="fw-bold mb-3" style="color:#005999;">Chi Siamo</h1>
+      <h4 class="mb-4" style="color:#0079A4;">Esperienza, passione e affidabilità da oltre 40 anni</h4>
+      <p style="font-size:1.15em; color:#222;">
+        Egidio Carlino è sinonimo di trasporti edili e servizi per l’edilizia a Roma e provincia. Da più di <b>40 anni</b> Egidio lavora con dedizione e professionalità nel settore, offrendo soluzioni su misura per privati e aziende.<br><br>
+        La nostra storia nasce dalla passione per il lavoro, dalla conoscenza profonda del territorio e dalla capacità di adattarsi alle esigenze di ogni cliente. Siamo cresciuti grazie alla fiducia di chi ci ha scelto e continuiamo a investire in mezzi, persone e innovazione.<br><br>
+        Oggi Egidio Carlino Trasporti è un punto di riferimento per chi cerca affidabilità, puntualità e competenza. Ogni servizio è pensato per garantire sicurezza, trasparenza e risultati concreti.<br><br>
+        <span class="fw-bold" style="color:#0079A4;">Affidati all’esperienza di chi conosce davvero il mestiere.</span>
+      </p>
+      <a href="tel:+393895472706" class="btn btn-primary btn-lg mt-3">Contattaci</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer-custom mt-5 pt-4" style="background:#f8f9fa;">
+  <div class="container">
+    <div class="row align-items-center pb-3">
+      <!-- Contatti a sinistra -->
+      <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+        <h5 class="fw-bold mb-2" style="color:#005999;">Contatti</h5>
+        <div style="font-size:1.05em; color:#222;">
+          <div><i class="bi bi-geo-alt-fill me-2" style="color:#005999;"></i>Via Roma 123, 80100 Napoli</div>
+          <div><i class="bi bi-telephone-fill me-2" style="color:#005999;"></i><a href="tel:+393895472706" style="color:#222; text-decoration:none;">+39 389 547 2706</a></div>
+          <div><i class="bi bi-envelope-fill me-2" style="color:#005999;"></i><a href="mailto:info@egidiocarlinotrasporti.it" style="color:#222; text-decoration:none;">info@egidiocarlinotrasporti.it</a></div>
+        </div>
+      </div>
+      <!-- Logo al centro (più grande) -->
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <img src="img/logo.png" alt="Logo Egidio Carlino Trasporti" style="height:100px; margin-bottom:8px;">
+        <div style="font-size:1.1em; color:#005999; font-weight:600;">Egidio Carlino Trasporti</div>
+        <div style="font-size:0.95em; color:#222;">&copy; 2025 Tutti i diritti riservati.</div>
+      </div>
+      <!-- Orari a destra -->
+      <div class="col-md-4 text-md-end text-center">
+        <h5 class="fw-bold mb-2" style="color:#005999;">Orari di apertura</h5>
+        <div style="font-size:1.05em; color:#222;">
+          <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Lun-Ven: 08:00 - 18:00</div>
+          <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Sabato: 08:00 - 13:00</div>
+          <div><i class="bi bi-x-circle me-2" style="color:#005999;"></i>Domenica: Chiuso</div>
+        </div>
+      </div>
+    </div>
+    <!-- Riga blu con social al centro -->
+    <div class="row align-items-center">
+      <div class="col-5 d-none d-md-block">
+        <hr style="border-top:3px solid #005999; opacity:1; margin:18px 0;">
+      </div>
+      <div class="col-12 col-md-2 text-center">
+        <div style="font-size:1.08em; color:#005999; font-weight:600; margin-bottom:6px;">Seguici su</div>
+        <div>
+          <a href="https://facebook.com/" class="mx-2" title="Facebook" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACd0lEQVR4nO2Zv2sUQRTHP+evwigSrCyiAWOpTXpBxcRcCkn8BVrZif+AjUJQSA5Jo4VpbMQiJtrE/CCojZ3YGEQx9nYaE6PRxOJWBp4Qwu7czuzb3Tm4L3zhmn1vPszsm7fvoKWWgtceoArUgGlgEfgO/BWb35+A58AI0CfPBKGKLGgSWAciR/8BJoAzEqsUXQDeeyw+yQvAYJEAR4BXigBb/QLoyhviHLCSI0QkXgUu5wFgzu9QAQDRFtc03x0TaKwEiEj8QAtmpESISHwnK8SlACAi8ZUs1emn0iLMffFQSraJux/YB7QDncBRYLRBjB/AYR8QrRL7EjiQIt/VFLHmXSHOK0HMAjtS5kwDYjyQFqKidGN/kyOEMsi7tFWsT2k3hh0gXEAioDdNwEklkGOWHN3Afcn1328dYo83gtjr2cXGVZjtFoiNjPF/A7ttIFXFTjZJj5Ry9NhAakpJXltyfCniHZxWSjKXEL8iX4saOaZsIJ8V74847VKKH8lnc6KWmgjkqw1ko4lA1rVBBqT522zbdKQ9wXcd85q1JmrZA+Q0Onri0QIlarFEENNDueT9aAs2WxLINmBNs/wOlwRySPvzt98j4HXpnza7y3Ihdsf4mkfeXhuIacR+eQQtuvyuAW2NtvlpE4BMkEI9TQByKg2IOccfAgZZwEFnAwapUuA4KC+QeTzUKVPxUEBWgIN4yjSE9QBA6sBFMup2ACBDKOleiSCjKOuGwzHTAKlr7kTcX2/LBYAsucx4s3SqMzmCTAEdFKh+y5jTB+SNzJ1L03HgsYxJXUFWZfJoYgQjs8iTwE0pDHHaCTwDbgEn5JmWWiJg/QOlYrQmouYwLQAAAABJRU5ErkJggg==" alt="Facebook" style="height:36px; width:36px; vertical-align:middle; transition:transform 0.18s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <a href="https://instagram.com/" class="mx-2" title="Instagram" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgElEQVR4nO2Z2U8TURTG+U+YO4WiiLSAGEUjKIsKjRKFKGpcHjQUjQuRFhGkfQIhmkqI+4KaoMEIDVpwgRektEiMWFRqXEjEgFUTrdBWEPnMXKG1LIltpTNN+iXnZeZm5vude+42ExISVFBBBSVosSy7hRDSQQixE0Lgp7AzDKMPDQ3d7JN5hmFO+9E0ZgqGYap9yTyv5okLYpPHABNlIxSAdm8AbHwbJ64Y9gbgv7x8UYrMLViRyKvnhPABwLIs1M9HUdj6For7vTRkcYmIFIUHFsDjV32YlOGwBlnzlwQuQI+hC2pJRuACcGo+cQHRoojABeBUW3MdC2LjAxeA9kSnCfLzWqzOVQYmwKTqr95CZUxmYAB8HBjEVBm199CeIOcPgBWFYen6HGQWViLn+BUk79g3K0BfRgnuai5ioP+DMACStuWioLUPKtMPKJp6UNaoR6WmBipJ+owAA2nFkM1bBHnUSjRszEeHsgpdeRX8AGwo0VCDCt0zdPa+c5rsbHwAfYJ8VoCMiDjnM2LD5mNrZAINvwKk7Smg5kq0Roz+HHOraU8AyD/GfwWIiJKgyPCJZn7S/NjYGB7rWtCmuQp9YZWwAdbIC2nNG1++paZGRkbwJLcCX5KKcHvxdhRL1uLQwhThAuw8o4Wyqcdpqv1SHTXPDUy32UmoAHvrDChv1LumwQMnaeantuP2/lMBBoUAsLvmIU43G5ymOpSnaNlMbSdZvpICdE0AOOx22lPpfANsLr8Mja7DCdDdZkBZzPpp7bJU1VCZHLAO22m7Ny/MFGC5eCG/AEtk2SjVunqAU+vNBkQuiKL3ReFirCsoQ6nJgWKt0dnm0dla9CcqIGZF/AKwLIu8ay3T5v87hm7sr9Pj2NNhmnnO/NchG7333Wql24gb8ds8Nk/mYiGLXroC53RtbgB0Pfj1C+b3AxiyOZzXxsfH6TixJB5BqjhGGACEK6VVaTC//rMWzCaHwwF9cTWtfZXU86MkmUsALuKlsag/ewWfLRY349ZvVhhuN8GcpaaZL5Wme22ezPV2OoywyI9OhW7dQXTvKkNvthqW5KN4n6hAbfxWpIilPpkn/jzQcIf1ZLEUy8KjEE5Yn40THwAC+9MiwzB6ARgHFwzDPPIYgPu5wLdx4opsjwEmeqFaAOarvDL/F8Qm7vu8n8eEbeKd3mU+qKCCCirEX/oNpOLqaJHqPIUAAAAASUVORK5CYII=" alt="Instagram" style="height:36px; width:36px; vertical-align:middle; transition:transform 0.18s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <a href="https://tiktok.com/" class="mx-2" title="TikTok" target="_blank">
+            <img src="data:image/png;base64,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" alt="TikTok" style="height:36px; width:36px; vertical-align:middle; transition:transform 0.18s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+        </div>
+      </div>
+      <div class="col-5 d-none d-md-block">
+        <hr style="border-top:3px solid #005999; opacity:1; margin:18px 0;">
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- ...existing code... -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<a href="https://wa.me/393895472706" target="_blank"
+   style="position:fixed; right:22px; bottom:22px; z-index:9999; background:#25D366; color:#fff; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.18); text-decoration:none;"
+   title="Clicca qui per parlare su WhatsApp">
+  <i class="bi bi-whatsapp" style="font-size:2.2rem;"></i>
+</a>
+<span style="position:fixed; right:90px; bottom:38px; z-index:9999; background:#25D366; color:#fff; padding:8px 16px; border-radius:18px; font-size:1.08em; font-family:sans-serif; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+  Chatta su WhatsApp!
+</span>
+
+<script>
+  // Ritarda la chiusura del dropdown di 300ms
+  document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
+    let timeout;
+    drop.addEventListener('mouseenter', function(){
+      clearTimeout(timeout);
+      drop.classList.add('show');
+      const menu = drop.querySelector('.dropdown-menu');
+      if(menu) menu.classList.add('show');
+    });
+    drop.addEventListener('mouseleave', function(){
+      timeout = setTimeout(function(){
+        drop.classList.remove('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.remove('show');
+      }, 300);
+    });
+  });
+</script>
+</body>
+</html>
