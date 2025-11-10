@@ -349,36 +349,38 @@ h3 {
     <!-- Navbar -->
     <!-- Sostituisci la voce Servizi nella navbar con un dropdown -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
-  <div class="container"> <!-- usare .container per uniformare con le altre pagine -->
-    <div class="logo-container">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img src="https://dl.dropboxusercontent.com/scl/fi/5so5w651pwlq3fq0hmngd/logo.png?rlkey=jbum0e25kft949025o3u91b32&st=mzwycsdn" class="logo" alt="Logo">
-      <img src="https://dl.dropboxusercontent.com/scl/fi/q63r8jwagrgsm2qnphnlr/image.png?rlkey=b35k6bpwohm7253ros95viuj5&st=pv98rwd6" class="logo-text" alt="Testo CNSI">
-    </div>
+      <img src="https://dl.dropboxusercontent.com/scl/fi/q63r8jwagrgsm2qnphnlr/image.png?rlkey=b35k6bpwohm7253ros95viuj5&st=pv98rwd6" class="logo-text ms-3" alt="Testo CNSI">
+    </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+
         <li class="nav-item dropdown" id="serviziDropdownLi">
-          <a class="nav-link fw-bold active dropdown-toggle" href="servizi.html" id="serviziDropdown">Servizi</a>
-          <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
+          <a class="nav-link fw-bold dropdown-toggle" href="#" id="serviziDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Servizi
           </a>
           <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
-            <li><a class="dropdown-item" href="scavi.html"><i class="bi bi-truck"></i>Scavi e movimento terra</a></li>
-            <li><a class="dropdown-item" href="trasporti.html"><i class="bi bi-box-seam"></i>Trasporto e fornitura materiali edili</a></li>
-            <li><a class="dropdown-item" href="demolizione.html"><i class="bi bi-building"></i>Demolizione</a></li>
-            <li><a class="dropdown-item" href="cassoni.html"><i class="bi bi-inboxes"></i>Noleggio Cassoni</a></li>
-            <li><a class="dropdown-item" href="deposito.html"><i class="bi bi-archive"></i>Deposito materiali edili</a></li>
-            <li><a class="dropdown-item" href="facchinaggio.html"><i class="bi bi-person-workspace"></i>Facchinaggio</a></li>
+            <li><a class="dropdown-item" href="scavi.html"><i class="bi bi-truck me-2"></i>Scavi e movimento terra</a></li>
+            <li><a class="dropdown-item" href="trasporti.html"><i class="bi bi-box-seam me-2"></i>Trasporto e fornitura materiali edili</a></li>
+            <li><a class="dropdown-item" href="demolizione.html"><i class="bi bi-building me-2"></i>Demolizione</a></li>
+            <li><a class="dropdown-item" href="cassoni.html"><i class="bi bi-inboxes me-2"></i>Noleggio Cassoni</a></li>
+            <li><a class="dropdown-item" href="deposito.html"><i class="bi bi-archive me-2"></i>Deposito materiali edili</a></li>
+            <li><a class="dropdown-item" href="facchinaggio.html"><i class="bi bi-person-workspace me-2"></i>Facchinaggio</a></li>
           </ul>
         </li>
+
         <li class="nav-item"><a class="nav-link fw-bold" href="chiSiamo.html">Chi Siamo</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="contatti.html">Contatti</a></li>
       </ul>
+
       <a class="btn btn-warning ms-4 fw-bold" href="tel:+393895472706" style="border-radius:1.5em;">+39 389 547 2706</a>
     </div>
   </div>
