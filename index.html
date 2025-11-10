@@ -8,31 +8,6 @@
  
   <link rel="stylesheet" href="../styles/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-</head>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Ritarda la chiusura del dropdown di 300ms
-  document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
-    let timeout;
-    drop.addEventListener('mouseenter', function(){
-      clearTimeout(timeout);
-      drop.classList.add('show');
-      const menu = drop.querySelector('.dropdown-menu');
-      if(menu) menu.classList.add('show');
-    });
-    drop.addEventListener('mouseleave', function(){
-      timeout = setTimeout(function(){
-        drop.classList.remove('show');
-        const menu = drop.querySelector('.dropdown-menu');
-        if(menu) menu.classList.remove('show');
-      }, 300);
-    });
-  });
-</script>
   <style>
 body {
     font-family: Arial, sans-serif;
@@ -347,6 +322,32 @@ h3 {
   color: #fff !important;
 }
 </style>
+</head>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Ritarda la chiusura del dropdown di 300ms
+  document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
+    let timeout;
+    drop.addEventListener('mouseenter', function(){
+      clearTimeout(timeout);
+      drop.classList.add('show');
+      const menu = drop.querySelector('.dropdown-menu');
+      if(menu) menu.classList.add('show');
+    });
+    drop.addEventListener('mouseleave', function(){
+      timeout = setTimeout(function(){
+        drop.classList.remove('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.remove('show');
+      }, 300);
+    });
+  });
+</script>
+  
 <body>
   
     <!-- Navbar -->
