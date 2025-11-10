@@ -349,20 +349,22 @@ h3 {
     <!-- Navbar -->
     <!-- Sostituisci la voce Servizi nella navbar con un dropdown -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
-  <div class="container-fluid">
+  <div class="container"> <!-- usare .container per uniformare con le altre pagine -->
     <div class="logo-container">
       <img src="https://dl.dropboxusercontent.com/scl/fi/5so5w651pwlq3fq0hmngd/logo.png?rlkey=jbum0e25kft949025o3u91b32&st=mzwycsdn" class="logo" alt="Logo">
-  <img src="https://dl.dropboxusercontent.com/scl/fi/q63r8jwagrgsm2qnphnlr/image.png?rlkey=b35k6bpwohm7253ros95viuj5&st=pv98rwd6" class="logo-text" alt="Testo CNSI">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/q63r8jwagrgsm2qnphnlr/image.png?rlkey=b35k6bpwohm7253ros95viuj5&st=pv98rwd6" class="logo-text" alt="Testo CNSI">
     </div>
-    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
         <li class="nav-item dropdown" id="serviziDropdownLi">
-          <a class="nav-link fw-bold active dropdown-toggle" href="servizi.html" id="serviziDropdown">
+          <a class="nav-link fw-bold active dropdown-toggle" href="servizi.html" id="serviziDropdown">Servizi</a>
+          <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
             Servizi
           </a>
           <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
