@@ -291,7 +291,39 @@ h3 {
   .navbar .logo-text { height: 24px !important; }
 }
 
-/* end of file */
+.navbar .logo,
+.logo-container .logo {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: contain !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.navbar .logo-text,
+.logo-container .logo-text {
+  width: 240px !important;
+  height: 80px !important;
+  object-fit: contain !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Responsive: dimensioni ridotte ma mantenendo rapporto */
+@media (max-width: 900px) {
+  .navbar .logo,
+  .logo-container .logo {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .navbar .logo-text,
+  .logo-container .logo-text {
+    width: 144px !important; /* 60% of 240 */
+    height: 48px !important;  /* 60% of 80 */
+  }
+}
 </style>
 </head>
 
