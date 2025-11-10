@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <style>
+/* Reset base */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,12 +18,24 @@ body {
     background: #f8f9fa;
 }
 
-/* Miglioramenti navbar: loghi e link più vicini, font più grande */
+/* Navbar / logo */
 .logo-container {
     display: flex;
     align-items: center;
     gap: 44px;
     margin-left: 58px;
+}
+
+/* Forza dimensioni dei loghi nella navbar (override unico e definitivo) */
+.navbar .logo {
+    height: 140px !important; /* primo logo più grande */
+    width: auto !important;
+    display: block;
+}
+.navbar .logo-text {
+    height: 64px !important;  /* secondo logo leggermente più piccolo */
+    width: auto !important;
+    display: block;
 }
 
 /* Navbar sticky: resta visibile mentre scorri */
@@ -63,17 +76,28 @@ body {
     bottom: -2px;
 }
 
-.navbar-nav .dropdown-toggle::after {
-    display: none !important;
-}
+.navbar-nav .dropdown-toggle::after,
 .navbar-nav .nav-link.dropdown-toggle::after {
     display: none !important;
 }
+
 .navbar .btn-warning {
     margin-left: 12px !important;
     margin-right: 24px !important;
     font-size: 1.08em;
+    background: #3076b3 !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 1.5em !important;
 }
+.navbar .btn-warning:hover,
+.navbar .btn-warning:focus {
+    background: #265984 !important;
+    color: #fff !important;
+}
+
+/* Dropdown menu hover behavior (visual only) */
 .navbar .dropdown:hover > .dropdown-menu,
 .navbar .dropdown:focus-within > .dropdown-menu,
 .navbar .dropdown.show > .dropdown-menu {
@@ -96,9 +120,6 @@ body {
     margin-top: 0.5em;
     background: #fff;
 }
-
-/* default logo sizes (override specific per responsive later) */
-
 
 /* Hero section */
 .hero {
@@ -137,7 +158,6 @@ body {
     width: 100%;
     padding: 0 5vw;
 }
-
 .hero-content h1 {
     font-size: 2.2em;
     font-weight: 400;
@@ -145,25 +165,13 @@ body {
     text-shadow: 0 2px 8px rgba(0,0,0,0.25);
     letter-spacing: 0.5px;
 }
-
 .hero-content p {
     font-size: 1.2em;
     margin-bottom: 30px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-footer {
-    background: #ffffff;
-    color: #222;
-    text-align: center;
-    padding: 10px 0;
-    position: static;
-    width: 100%;
-    font-size: 0.95em;
-    border-top: 1px solid #eee;
-    margin-top: 40px;
-}
-
+/* Buttons */
 .btn-primary {
     background: #0079A4 !important;
     border: none !important;
@@ -174,7 +182,6 @@ footer {
 .btn-primary:hover {
     background: #0079A4 !important;
 }
-
 .btn-warning {
     background: #0079A4 !important;
     border: none !important;
@@ -187,7 +194,17 @@ footer {
     background: #0079A4 !important;
     color: #fff !important;
 }
+.btn-primary,
+.btn-warning {
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.btn-primary:hover,
+.btn-warning:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 18px rgba(0,121,164,0.18);
+}
 
+/* Headings */
 h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4em;
@@ -195,28 +212,16 @@ h3 {
     color: #3076b3;
 }
 
-/* Effetto sui tasti Contattaci */
-.btn-primary,
-.btn-warning {
-    transition: transform 0.18s, box-shadow 0.18s;
-}
-
-.btn-primary:hover,
-.btn-warning:hover {
-    transform: scale(1.07);
-    box-shadow: 0 4px 18px rgba(0,121,164,0.18);
-}
-
-/* Effetto sulle icone dei materiali */
+/* Images / thumbnails effects */
 .img-fluid.rounded.shadow {
     transition: transform 0.18s, box-shadow 0.18s;
 }
-
 .img-fluid.rounded.shadow:hover {
     transform: scale(1.08);
     box-shadow: 0 6px 24px rgba(0,121,164,0.22);
 }
 
+/* Footer */
 .footer-custom {
     background: #f8f9fa;
     border-top: 2px solid #0079A4;
@@ -229,7 +234,7 @@ h3 {
     text-decoration: none;
 }
 
-/* Effetto hover sulle icone servizi */
+/* Service icons hover */
 .row .col-auto a img {
     transition: transform 0.18s, box-shadow 0.18s;
     cursor: pointer;
@@ -239,7 +244,7 @@ h3 {
     box-shadow: 0 4px 18px rgba(0,121,164,0.22);
 }
 
-/* Effetto hover su "Scopri di più" */
+/* "Scopri di più" styles */
 .scopri-di-piu {
     color: #0079A4;
     transition: color 0.18s, text-decoration 0.18s;
@@ -249,12 +254,9 @@ h3 {
     color: #0079A4;
     text-decoration: underline;
 }
-
-/* Effetto hover su tutto il box servizio */
 .row .col-auto a:hover {
     text-decoration: none;
 }
-/* Forza colore blu su hover per "Scopri di più" */
 .scopri-di-piu,
 .row .col-auto a:hover .scopri-di-piu,
 .row .col-auto a:focus .scopri-di-piu,
@@ -265,55 +267,32 @@ h3 {
     text-decoration: underline;
 }
 
+/* Responsive breakpoints */
 @media (max-width: 900px) {
-    .hero {
-        height: 220px;
-        min-height: 180px;
-        max-height: 300px;
-    }
-    .hero-content h1 {
-        font-size: 1.3em;
-    }
-    .hero-content p {
-        font-size: 1em;
-    }
-    .logo {
-        height: 200px;
-    }
-    .logo-text {
-        height: 60px;
-    }
+    .hero { height: 220px; min-height: 180px; max-height: 300px; }
+    .hero-content h1 { font-size: 1.3em; }
+    .hero-content p { font-size: 1em; }
+
+    /* Mobile logo sizes (reduce) */
+    .navbar .logo { height: 72px !important; }
+    .navbar .logo-text { height: 30px !important; }
+
     .navbar-nav .nav-link {
         font-size: 1em;
         padding-left: 0.3em !important;
         padding-right: 0.3em !important;
     }
-    .logo-container {
-        gap: 10px;
-        margin-left: 6px;
-    }
-    .navbar .btn-warning {
-        margin-left: 6px !important;
-        margin-right: 10px !important;
-        font-size: 1em;
-    }
+    .logo-container { gap: 10px; margin-left: 6px; }
+    .navbar .btn-warning { margin-left: 6px !important; margin-right: 10px !important; font-size: 1em; }
 }
 
-/* Override richiesti: ridurre logo e logo-text e forza colore blu per pulsante telefono */
-.logo { height: 200px !important; width: auto; }
-.logo-text { height: 60px !important; width: auto; }
+/* Small override for very narrow viewports */
+@media (max-width: 480px) {
+  .navbar .logo { height: 56px !important; }
+  .navbar .logo-text { height: 24px !important; }
+}
 
-.navbar .btn-warning {
-  background: #3076b3 !important;
-  color: #ffffff !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-.navbar .btn-warning:hover,
-.navbar .btn-warning:focus {
-  background: #265984 !important;
-  color: #fff !important;
-}
+/* end of file */
 </style>
 </head>
 
