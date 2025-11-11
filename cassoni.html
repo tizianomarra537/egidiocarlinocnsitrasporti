@@ -126,6 +126,188 @@
     <!-- Servizio 4 -->
     <div class="col-md-4">
       <div class="card servizi-card shadow-sm h-100">
+        <img src="./img/image-noleggio.png" class="card-img-top" alt="Noleggio cassoni scarrabili">
+        <div class="card-body text-center">
+          <div class="servizi-icon"><i class="bi bi-box"></i></div>
+          <h5 class="card-title fw-bold" style="color:#3076b3;">Noleggio cassoni scarrabili</h5>
+          <p class="card-text">Cassoni di varie dimensioni per raccolta e trasporto rifiuti edili, materiali di scavo e demolizione.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Servizio 5 -->
+    <div class="col-md-4">
+      <div class="card servizi-card shadow-sm h-100">
+        <img src="./img/image-deposito.png" class="card-img-top" alt="Deposito materiali">
+        <div class="card-body text-center">
+          <div class="servizi-icon"><i class="bi bi-archive"></i></div>
+          <h5 class="card-title fw-bold" style="color:#3076b3;">Deposito materiali</h5>
+          <p class="card-text">Spazi dedicati per lo stoccaggio temporaneo di materiali edili, attrezzature e mezzi.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Servizio 6 -->
+    <div class="col-md-4">
+      <div class="card servizi-card shadow-sm h-100">
+        <img src="./img/image-facchinaggio.png" class="card-img-top" alt="Facchinaggio e logistica">
+        <div class="card-body text-center">
+          <div class="servizi-icon"><i class="bi bi-people"></i></div>
+          <h5 class="card-title fw-bold" style="color:#3076b3;">Facchinaggio e logistica</h5>
+          <p class="card-text">Servizio di facchinaggio per carico/scarico materiali, movimentazione interna e supporto logistico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-custom mt-5 pt-4" style="background:#f8f9fa;">
+  <div class="container">
+    <div class="row align-items-center pb-3">
+      <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+        <h5 class="fw-bold mb-2" style="color:#005999;">Contatti</h5>
+        <div style="font-size:1.05em; color:#222;">
+          <div><i class="bi bi-geo-alt-fill me-2" style="color:#005999;"></i>Via Roma 123, 80100 Napoli</div>
+          <div><i class="bi bi-telephone-fill me-2" style="color:#005999;"></i><a href="tel:+393895472706" style="color:#222; text-decoration:none;">+39 389 547 2706</a></div>
+          <div><i class="bi bi-envelope-fill me-2" style="color:#005999;"></i><a href="mailto:info@egidiocarlinotrasporti.it" style="color:#222; text-decoration:none;">info@egidiocarlinotrasporti.it</a></div>
+        </div>
+      </div>
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <img src="img/logo.png" alt="Logo Egidio Carlino Trasporti" style="height:100px; margin-bottom:8px;">
+        <div style="font-size:1.1em; color:#005999; font-weight:600;">Egidio Carlino Trasporti</div>
+        <div style="font-size:0.95em; color:#222;">&copy; 2025 Tutti i diritti riservati.</div>
+      </div>
+      <div class="col-md-4 text-md-end text-center">
+        <h5 class="fw-bold mb-2" style="color:#005999;">Orari di apertura</h5>
+        <div style="font-size:1.05em; color:#222;">
+          <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Lun-Ven: 08:00 - 18:00</div>
+          <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Sabato: 08:00 - 13:00</div>
+          <div><i class="bi bi-x-circle me-2" style="color:#005999;"></i>Domenica: Chiuso</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/393895472706" target="_blank"
+   style="position:fixed; right:22px; bottom:22px; z-index:9999; background:#25D366; color:#fff; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.18); text-decoration:none;"
+   title="Clicca qui per parlare su WhatsApp">
+  <i class="bi bi-whatsapp" style="font-size:2.2rem;"></i>
+</a>
+<span style="position:fixed; right:90px; bottom:38px; z-index:9999; background:#25D366; color:#fff; padding:8px 16px; border-radius:18px; font-size:1.08em; font-family:sans-serif; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+  Chatta su WhatsApp!
+</span>
+
+<script>
+  // Ritarda la chiusura del dropdown di 300ms
+  document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
+    let timeout;
+    drop.addEventListener('mouseenter', function(){
+      clearTimeout(timeout);
+      drop.classList.add('show');
+      const menu = drop.querySelector('.dropdown-menu');
+      if(menu) menu.classList.add('show');
+    });
+    drop.addEventListener('mouseleave', function(){
+      timeout = setTimeout(function(){
+        drop.classList.remove('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.remove('show');
+      }, 300);
+    });
+  });
+</script>
+</body>
+</html>      const menu = drop.querySelector('.dropdown-menu');
+      if(menu) menu.classList.add('show');
+    });
+    drop.addEventListener('mouseleave', function(){
+      timeout = setTimeout(function(){
+        drop.classList.remove('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.remove('show');
+      }, 300);
+    });
+  });
+</script>
+<body>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
+  <div class="container-fluid">
+    <div class="logo-container">
+      <img src="img/logo.png" class="logo" alt="Logo">
+      <img src="img/image.png" class="logo-text" alt="Testo CNSI">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+        <li class="nav-item dropdown" id="serviziDropdownLi">
+          <a class="nav-link fw-bold active dropdown-toggle" href="servizi.html" id="serviziDropdown">
+            Servizi
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
+            <li><a class="dropdown-item" href="scavi.html"><i class="bi bi-truck"></i>Scavi e movimento terra</a></li>
+            <li><a class="dropdown-item" href="trasporti.html"><i class="bi bi-box-seam"></i>Trasporto e fornitura materiali edili</a></li>
+            <li><a class="dropdown-item" href="demolizione.html"><i class="bi bi-building"></i>Demolizione</a></li>
+            <li><a class="dropdown-item" href="cassoni.html"><i class="bi bi-inboxes"></i>Noleggio Cassoni</a></li>
+            <li><a class="dropdown-item" href="deposito.html"><i class="bi bi-archive"></i>Deposito materiali edili</a></li>
+            <li><a class="dropdown-item" href="facchinaggio.html"><i class="bi bi-person-workspace"></i>Facchinaggio</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="chiSiamo.html">Chi Siamo</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="contatti.html">Contatti</a></li>
+      </ul>
+      <a class="btn btn-warning ms-4 fw-bold" href="tel:+393895472706" style="border-radius:1.5em;">+39 389 547 2706</a>
+    </div>
+  </div>
+</nav>
+
+<section class="container py-5">
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <h1 class="fw-bold" style="color:#005999; font-family:'Montserrat',sans-serif;">I nostri servizi</h1>
+      <p style="font-size:1.15em; color:#444; font-family:'Nunito Sans',Arial,sans-serif; max-width:700px; margin:0 auto;">
+        CNSI Trasporti di Egidio Carlino offre una gamma completa di servizi per l’edilizia e il movimento terra. Scegli il servizio che ti interessa!
+      </p>
+    </div>
+  </div>
+  <div class="row g-4">
+    <!-- Servizio 1 -->
+    <div class="col-md-4">
+      <div class="card servizi-card shadow-sm h-100">
+        <img src="https://www.dropbox.com/scl/fi/yo6svzqghsa7ngo5rgwc8/image-scopridipiu.png?rlkey=u655nfaou4c11lnhvvjyj2r1g&st=r8r81oio&dl=1" class="card-img-top" alt="Scavi e movimento terra">
+        <div class="card-body text-center">
+          <div class="servizi-icon"><i class="bi bi-truck"></i></div>
+          <h5 class="card-title fw-bold" style="color:#3076b3;">Scavi e movimento terra</h5>
+          <p class="card-text">Scavi di qualsiasi dimensione, sbancamenti, livellamenti e preparazione terreni per cantieri edili e stradali.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Servizio 2 -->
+    <div class="col-md-4">
+      <div class="card servizi-card shadow-sm h-100">
+        <img src="https://www.dropbox.com/scl/fi/dhhid2i59wylknipqsupx/image-scopridipiu2.png?rlkey=xs9iikef1r2r4ocfwlercrbnc&st=q338yyaw&dl=1" class="card-img-top" alt="Trasporto materiali edili">
+        <div class="card-body text-center">
+          <div class="servizi-icon"><i class="bi bi-box-seam"></i></div>
+          <h5 class="card-title fw-bold" style="color:#3076b3;">Trasporto e fornitura materiali edili</h5>
+          <p class="card-text">Sabbia, ghiaia, cemento, terra, materiali inerti e tutto ciò che serve per il tuo cantiere.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Servizio 3 -->
+    <div class="col-md-4">
+      <div class="card servizi-card shadow-sm h-100">
+        <img src="https://www.dropbox.com/scl/fi/m9sce7n6q12y5icxj6mbz/image-scopridipiu1.png?rlkey=u58mzwyfmwegye9xx7lwog9vs&st=6xxy0swb&dl=1" class="card-img-top" alt="Demolizioni">
+        <div class="card-body text-center">
+          <div class="servizi-icon"><i class="bi bi-building"></i></div>
+          <h5 class="card-title fw-bold" style="color:#3076b3;">Demolizioni</h5>
+          <p class="card-text">Demolizione controllata di edifici, strutture e pavimentazioni, con smaltimento materiali.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Servizio 4 -->
+    <div class="col-md-4">
+      <div class="card servizi-card shadow-sm h-100">
         <img src="https://www.dropbox.com/s/9eat1zzthk03zdr5wthn4/image-noleggio.png?raw=1" class="card-img-top" alt="Noleggio cassoni scarrabili">
         <div class="card-body text-center">
           <div class="servizi-icon"><i class="bi bi-box"></i></div>
