@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Servizi - Egidio Carlino Trasporti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+     <style>
+/* Reset base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f8f9fa;
+}
+
+/* Navbar / logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    margin-left: 58px;
+}
+
+/* Forza dimensioni dei loghi nella navbar (override unico e definitivo) */
+.navbar .logo {
+    height: 140px !important; /* primo logo più grande */
+    width: auto !important;
+    display: block;
+}
+.navbar .logo-text {
+    height: 64px !important;  /* secondo logo leggermente più piccolo */
+    width: auto !important;
+    display: block;
+}
+
+/* Navbar sticky: resta visibile mentre scorri */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.navbar-nav {
+    gap: 0.7em;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.2s;
+    font-size: 1.18em;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #0079A4 !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0079A4;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+}
+
+.navbar-nav .dropdown-toggle::after,
+.navbar-nav .nav-link.dropdown-toggle::after {
+    display: none !important;
+}
+
+.navbar .btn-warning {
+    margin-left: 12px !important;
+    margin-right: 24px !important;
+    font-size: 1.08em;
+    background: #3076b3 !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 1.5em !important;
+}
+.navbar .btn-warning:hover,
+.navbar .btn-warning:focus {
+    background: #265984 !important;
+    color: #fff !important;
+}
+
+/* Dropdown menu hover behavior (visual only) */
+.navbar .dropdown:hover > .dropdown-menu,
+.navbar .dropdown:focus-within > .dropdown-menu,
+.navbar .dropdown.show > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.navbar .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s, visibility 0.22s;
+    display: block;
+    border-radius: 1em;
+    box-shadow: 0 4px 18px rgba(0,89,153,0.10);
+    border: none;
+    min-width: 220px;
+    padding: 0.5em 0;
+    margin-top: 0.5em;
+    background: #fff;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    height: 400px;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.7);
+    transition: all 0.3s;
+    will-change: transform;
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    max-width: 90vw;
+    width: 100%;
+    padding: 0 5vw;
+}
+.hero-content h1 {
+    font-size: 2.2em;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    letter-spacing: 0.5px;
+}
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* Buttons */
+.btn-primary {
+    background: #0079A4 !important;
+    border: none !important;
+    border-radius: 1.5em !important;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.btn-primary:hover {
+    background: #0079A4 !important;
+}
+.btn-warning {
+    background: #0079A4 !important;
+    border: none !important;
+    color: #fff !important;
+    border-radius: 1.5em !important;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.btn-warning:hover {
+    background: #0079A4 !important;
+    color: #fff !important;
+}
+.btn-primary,
+.btn-warning {
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.btn-primary:hover,
+.btn-warning:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 18px rgba(0,121,164,0.18);
+}
+
+/* Headings */
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #3076b3;
+}
+
+/* Images / thumbnails effects */
+.img-fluid.rounded.shadow {
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.img-fluid.rounded.shadow:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(0,121,164,0.22);
+}
+
+/* Footer */
+.footer-custom {
+    background: #f8f9fa;
+    border-top: 2px solid #0079A4;
+    color: #222;
+    font-size: 1em;
+    letter-spacing: 0.2px;
+}
+.footer-custom a:hover {
+    color: #005999;
+    text-decoration: none;
+}
+
+/* Service icons hover */
+.row .col-auto a img {
+    transition: transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+}
+.row .col-auto a:hover img {
+    transform: scale(1.13);
+    box-shadow: 0 4px 18px rgba(0,121,164,0.22);
+}
+
+/* "Scopri di più" styles */
+.scopri-di-piu {
+    color: #0079A4;
+    transition: color 0.18s, text-decoration 0.18s;
+    cursor: pointer;
+}
+.row .col-auto a:hover .scopri-di-piu {
+    color: #0079A4;
+    text-decoration: underline;
+}
+.row .col-auto a:hover {
+    text-decoration: none;
+}
+.scopri-di-piu,
+.row .col-auto a:hover .scopri-di-piu,
+.row .col-auto a:focus .scopri-di-piu,
+.row .col-auto a:active .scopri-di-piu,
+.row .col-auto a:hover span.scopri-di-piu,
+.row .col-auto a:hover span:last-child {
+    color: #0079A4 !important;
+    text-decoration: underline;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+    .hero { height: 220px; min-height: 180px; max-height: 300px; }
+    .hero-content h1 { font-size: 1.3em; }
+    .hero-content p { font-size: 1em; }
+
+    /* Mobile logo sizes (reduce) */
+    .navbar .logo { height: 192px !important; }
+    .navbar .logo-text { height: 30px !important; }
+
+    .navbar-nav .nav-link {
+        font-size: 1em;
+        padding-left: 0.3em !important;
+        padding-right: 0.3em !important;
+    }
+    .logo-container { gap: 10px; margin-left: 6px; }
+    .navbar .btn-warning { margin-left: 6px !important; margin-right: 10px !important; font-size: 1em; }
+}
+
+/* Small override for very narrow viewports */
+@media (max-width: 480px) {
+  .navbar .logo { height: 56px !important; }
+  .navbar .logo-text { height: 24px !important; }
+}
+
+.navbar .logo,
+.logo-container .logo {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: contain !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.navbar .logo-text,
+.logo-container .logo-text {
+  width: 240px !important;
+  height: 80px !important;
+  object-fit: contain !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Responsive: dimensioni ridotte ma mantenendo rapporto */
+@media (max-width: 900px) {
+  .navbar .logo,
+  .logo-container .logo {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .navbar .logo-text,
+  .logo-container .logo-text {
+    width: 144px !important; /* 60% of 240 */
+    height: 48px !important;  /* 60% of 80 */
+      
+  }
+    /* Normalizza logo-container e rimuove spostamento */
+.logo-container { margin-left: 0 !important; gap: 24px !important; }
+
+/* Assicura che navbar-brand non faccia saltare il layout */
+.navbar-brand { padding: 0; display: flex; align-items: center; gap: 12px; }
+}
+</style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Ritarda la chiusura del dropdown di 300ms
+  document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
+    let timeout;
+    drop.addEventListener('mouseenter', function(){
+      clearTimeout(timeout);
+      drop.classList.add('show');
+      const menu = drop.querySelector('.dropdown-menu');
+      if(menu) menu.classList.add('show');
+    });
+    drop.addEventListener('mouseleave', function(){
+      timeout = setTimeout(function(){
+        drop.classList.remove('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.remove('show');
+      }, 300);
+    });
+  });
+</script>
+<body>
+    <!-- Navbar -->
+    <!-- Sostituisci la voce Servizi nella navbar con un dropdown -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/5so5w651pwlq3fq0hmngd/logo.png?rlkey=jbum0e25kft949025o3u91b32&st=mzwycsdn" class="logo" alt="Logo">
+      <img src="https://dl.dropboxusercontent.com/scl/fi/q63r8jwagrgsm2qnphnlr/image.png?rlkey=b35k6bpwohm7253ros95viuj5&st=pv98rwd6" class="logo-text ms-3" alt="Testo CNSI">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+
+        <li class="nav-item dropdown" id="serviziDropdownLi">
+          <a class="nav-link fw-bold dropdown-toggle" href="#" id="serviziDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Servizi
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
+            <li><a class="dropdown-item" href="scavi.html"><i class="bi bi-truck me-2"></i>Scavi e movimento terra</a></li>
+            <li><a class="dropdown-item" href="trasporti.html"><i class="bi bi-box-seam me-2"></i>Trasporto e fornitura materiali edili</a></li>
+            <li><a class="dropdown-item" href="demolizione.html"><i class="bi bi-building me-2"></i>Demolizione</a></li>
+            <li><a class="dropdown-item" href="cassoni.html"><i class="bi bi-inboxes me-2"></i>Noleggio Cassoni</a></li>
+            <li><a class="dropdown-item" href="deposito.html"><i class="bi bi-archive me-2"></i>Deposito materiali edili</a></li>
+            <li><a class="dropdown-item" href="facchinaggio.html"><i class="bi bi-person-workspace me-2"></i>Facchinaggio</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link fw-bold" href="chiSiamo.html">Chi Siamo</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="contatti.html">Contatti</a></li>
+      </ul>
+
+      <a class="btn btn-warning ms-4 fw-bold" href="tel:+393895472706" style="border-radius:1.5em;">+39 389 547 2706</a>
+    </div>
+  </div>
+</nav>
+<!-- ...existing code... -->
+
+<section class="container py-5">
+  <div class="row mb-5">
+    <div class="col-12 text-center position-relative" style="padding:0;">
+      <img src="https://i.postimg.cc/kgqW8Pjc/image-truck-copia.png"
+           alt="Servizi Trasporti"
+           class="img-fluid rounded shadow mb-0 hero-bg"
+           style="height:400px;object-fit:cover;width:100%;display:block;filter:brightness(0.6);">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+        <h2 class="fw-bold mb-3" style="color:#fff;">I nostri servizi</h2>
+        <p style="font-size:1.15em; max-width:700px; margin:0 auto; color:#fff;">
+          Dal noleggio di cassoni scarrabili a Roma al servizio demolizione, passando per trasporti e forniture di materiali edili, scavi e movimento terra, deposito materiali edili e attrezzature e facchinaggio.<br>
+          Offriamo servizi di ogni genere legati al mondo dei trasporti e dello smaltimento.
+        </p>
+        <a href="tel:+393895472706" class="btn btn-primary btn-lg mt-3">Contattaci</a>
+      </div>
+    </div>
+  </div>
+  <!-- Icone servizi con link a pagine dedicate -->
+<div class="row justify-content-center mb-4">
+  <!-- Prima riga: 3 servizi -->
+  <div class="col-auto text-center mb-3">
+    <a href="scavi.html" class="text-decoration-none servizi-link">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAESElEQVR4nO2bXYgWZRTHf662GUqIHwtumBcWod2YkNBqVxJEIJmYEBkImUpeSKFpKSrqxYbdeCOaF3W1F1aKQhciBGZWiLZdFEIYZrlGVKjrRy62O3HgDA2zzzzPfDzzzrzvvn84sDPv83X+85zznDlnFtpoo1WwAvgKuAcMAseA+YwR7AECgwgZz9HieAYYSSBA5BdgPC2MgxblQ1lIC+FhYENEqeMxZXuAxbF762kBPAUcAm7FlHo/pqwo/2zsnuySpsRDwGrgW8O2/kzbPJ3CBKR/U+FxoBf406LUP8AUbX/RQcDdZnCE44GlwCmHV4/KGu27PUXbudQU3cAW4NeUSkfltI4xOwVpr1AjdAAvACeAf3MoHkofME7HPO1oK86yFlgM/FBAaZHLSmAUbzj6nKQG2JjBvk1yH/gAmGQYe4o6xqS+f1Ax1hd86ueBBY45PnWMIf6mEszToyiP4hL4vJXyGHvRMVbcbBqGT3Iq/7l6+LTodMQO71EBHlHbzaL478DKnPMdsIx7hAqwOaPyEg/MKjBfj2Xsn6gA/RkJEDsuAokLLiWMPQxMpsaYrEFSUeyyELyIMYDHLPGG5BJKxQPAXmAgh9f/C9jkaR1fJ8zxIRUlKIMM8pqHdbyZMPY5SsZVDwT87MEXTAeGDGNLuDyBkvCEB+VDed7DeuL5wlCepCSsNUy2JEW/RzX4ifY76qlYYiLgVUpCX2yiHzP03RHre9/Dy8tE4LqBgH2UhIHYRPv1/qrIvdC2h/X6S73u0kpOtP82D2s6bCBA0m7eYbJ/yfEJPrYQEERec+M76EozJDNDrDNsYSliCH5zEBCezYtKcoYNQV9s4VKpRbOxgYMAyRVM1fvnE/L/ebDacsqMQqcmDq95OsZ2OxYXJUDkbb3/umEnzcyhvBx1t7MQ0OvxDBf5yBFwxAm4pLtDqkF/F3SGk/QEsq1vFPLE7nlkXAIB0ZTVPkNkmAVRp5uagKAGBEgKTDDH8FuHB7vPREBPrMzsus5KwB3Db8MRRUdyEOCy+1BupiEgRNrrtLLAkSrLS0Aauw9FTppRaBQB59Q5SoDzjUcC0th9KDurJCAA3nUok5WAtHYvckNflZ0ExL+0cF1nkXuO3JzJt3RY7N7kT4IEH7MsadKg5tJRMOssT/4lC+k0Kg7II7bC5heWfoPq8CRLPA0HemugaJJIRbh0dCoJddoJA/p+8mAjCGijjf/RpcWN/pShZZki83+n9YYZNAAvq/cMaigSwy8vW/mRGijqCmaWl7XtB2ugYKFwtgj2Jkwm5aV3NEcfftQ4VGGbUCS48YrvEyaSRcSxpcI2oVzAMwYTJgqrM2eBM/p3d4VtrEmNMgk4E6nidFfYpjQC+jOYwNYK21izOmV82DCkC3M5r0a1sWZ1iqBrrB+DYT29GQKhxKyOLxJu1vjJW7M6vjBDa3sXIv+lVZVkyuq00QaZ8B/BixCeadh0SgAAAABJRU5ErkJggg==" alt="Scavi e movimento terra" style="height:54px;width:54px;">
+      <div style="color:#005999; font-weight:600;">Scavi e movimento terra</div>
+      <span class="scopri-di-piu">
+        <a href="ScopriDiPiu.html" class="text-decoration-none" style="color:inherit;">
+          Scopri di più <i class="bi bi-arrow-right-circle"></i>
+        </a>
+      </span>
+    </a>
+  </div>
+  <div class="col-auto text-center mb-3">
+    <a href="trasporti.html" class="text-decoration-none servizi-link">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABm0lEQVR4nO2XuUoDURSGP8RGUBFBUcFCQRvFxqWI8QV8KkEfQC3ExtQi2hgXxCYkWNrY+AApBCWNC4goIwNHvAx3ws3kDskN54O/Oev8szAzoCiKoiiKouTNHRABtdB3RoaK5M9GYqc3og6r54xsAvUmdU/AITDa7UbqjvWPwJCrkQdRnrGkkagF7boa2RLlGWvHyBcwF5KRguXEH0nuJCQjNqaAd8mvh2wkZsf2Qg3RyDDwIjXLIRuJ2ZaagxCMFElnTWruQ36PRIYa7Q7wJR/H0VtGah00UfVppBuY7gUjsYlrX0Z83ec+ZkVqhP9ABVgQVSwNafkss1xVBuZFZUv+2bZ8xojNWprS8llmuWo68Twl83vm8jcJThixSYm9Gp/NaXmTZrVZNGbMGU9ciX1gwFx+IclTYER0JrFzh7zrrGPcuZKeEjAoKknsMq1pybgqP6JIYosOeZdZDbnPXVkFPi1z4thKs8b4H/gG+BbdykG55tNmfcgZjB/6VinIl8ffzmrK76+VflHWfLK2z3Wxp52KoiiKohAyv4auZp3y254rAAAAAElFTkSuQmCC" alt="Trasporto e fornitura materiali edili" style="height:54px;width:54px;">
+      <div style="color:#005999; font-weight:600;">Trasporto e fornitura materiali edili</div>
+      <span class="scopri-di-piu">
+        <a href="ScopriDiPiu.html" class="text-decoration-none" style="color:inherit;">
+          Scopri di più <i class="bi bi-arrow-right-circle"></i>
+        </a>
+      </span>
+    </a>
+  </div>
+  <div class="col-auto text-center mb-3">
+    <a href="demolizione.html" class="text-decoration-none servizi-link">
+      <img src="data:image/png;base64,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" alt="Demolizione" style="height:54px;width:54px;">
+      <div style="color:#005999; font-weight:600;">Demolizione</div>
+      <span class="scopri-di-piu">
+        <a href="ScopriDiPiu.html" class="text-decoration-none" style="color:inherit;">
+          Scopri di più <i class="bi bi-arrow-right-circle"></i>
+        </a>
+      </span>
+    </a>
+  </div>
+</div>
+<div class="row justify-content-center mb-4">
+  <!-- Seconda riga: 3 servizi -->
+  <div class="col-auto text-center mb-3">
+    <a href="cassoni.html" class="text-decoration-none servizi-link">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxElEQVR4nO2YMQ6CUBQEx94beBPBa1nojaw8g34KjmQsns03IWhEEggL7CSvmVDsBG0AY4wxAmyBGoh8d3SoGrvqvPUrG+DSeFj9rnnzB2eBcdHzTr9e4S4/8BQYGq17AMe8cblUrWqlP/i/mxMCP5ehjqkHOIS1heyBcmRfDOCjK+SNug+HiPlwiJgPh4j5cIiYD4eI+XCImA+HiPlwiJiP1YQUwGFkXw7goytkbsfUAxzCUkNSS9zQJ83ww7sxxhh0eQGuzPqKN4oqqwAAAABJRU5ErkJggg==" alt="Noleggio Cassoni" style="height:54px;width:54px;">
+      <div style="color:#005999; font-weight:600;">Noleggio Cassoni</div>
+      <span class="scopri-di-piu">
+        <a href="ScopriDiPiu.html" class="text-decoration-none" style="color:inherit;">
+          Scopri di più <i class="bi bi-arrow-right-circle"></i>
+        </a>
+      </span>
+    </a>
+  </div>
+  <div class="col-auto text-center mb-3">
+    <a href="deposito.html" class="text-decoration-none servizi-link">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB7UlEQVR4nO2ZQUrDQBSGP/UAKmi9gOha8BaCe8F7KGj1EAqexE1X2hq0HkVUrLpQBJ8MzCKLpBkzk+kkfT8MlHnT15cvkzc/DahUKpVKpVKpVHWUAdLwGJGwJNJIVtJwgQoABYACIGGJAqCwwBjHYxJHqZQAmPUFRztKpQJAiFwx8tbWXAHIGt52yQMQBYBzIgWAAqBuobN4tJIAMHK8+GFXATQlBYACQAEQOZG0HUBW0/n5HFdNqVYtEhnALnANPAX8ba//CcTzDv7n+3vAT+QLr7xJEgnAGvBu114A63Zc2bkJsOFRR+0aJRKAM7vuFljIzZvPdzZ27lFH8gDu7bqDgtihjd3QYQCfdt1mQWzLxl7pKIAl4NeuWy6Ir9jYt0cdye+AyZQdsG1jz3QYwKNDDzANsrMAThxOgSOPOpxqzGKbDGAHGOQ8gBmX1gP0cj4gihGSyAD2ga+IF+gMIKTKchpX9zLF+eVHmTPsha5RIgI4dnjmq+L9NgN4cOj6VfFx6BqloNixtal15spyGr05OL+quHGPjQMQj7my+UVH5+cSNy6ydQDIHXs+O+CDMJoKYFTwAsJ1riwnuUbm0wNMH2ltE+wHOAVO2wxgNdcIq5xfUbxRHyBzOnB9KdnFMQy0m1QqlUqlUtE+/QG+ulr0L1K2OgAAAABJRU5ErkJggg==" alt="Deposito materiali edili" style="height:54px;width:54px;">
+      <div style="color:#005999; font-weight:600;">Deposito materiali edili</div>
+      <span class="scopri-di-piu">
+        <a href="ScopriDiPiu.html" class="text-decoration-none" style="color:inherit;">
+          Scopri di più <i class="bi bi-arrow-right-circle"></i>
+        </a>
+      </span>
+    </a>
+  </div>
+  <div class="col-auto text-center mb-3">
+    <a href="facchinaggio.html" class="text-decoration-none servizi-link">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADzklEQVR4nO2aeYhNURjAf4axjLUsyTLWsQxRElnzh5qshUhKDKFEUiIkStZGGEoxfyFG/pEpS5pSaGKECCHGvmWMsjSW8XTqu3W97jn3znu37jLvV98f771zzvu+795zznfO90GGDBlCTgdgEtCIBkY2sAr4DCSA1YSITsBB4BXwC3gArAGa+DR+gYyZsMkX+d/A6QY8T1LOkktAThpj5wFnNWMrOUIIOGdQUMmJFMZsA+wCfrqMXQcMI0A6A39dlFQyyuN4WUAh8M7DmJZcCXJBHO1RyX0exlJOqqyH4XaZS0DkeVRQTRMdXYHjHt8knbxMc61Ji7seFDzt0E/tEBuBb2kYbpctBMRYD4vVMod+830y3JIfQC4BMQX4qlHsBtDMoU+uKO2nE04FYPt/Bh0AnooyKjbYDbRCzxafHaBkPBEiB3jsswNuA40JYRyfL7tGM4c3p8pnJywlJDQH1gPVSYvVGWCErV0v4IWPDvgItCNgBrk8WbXv75HoT9EHeO2jE/YGbD8VHhU9JlNE0Q9465MD1Kl0YJAOqKmHsmVAC+mnlH7vkxPOB+mA0noqe1lOgYrBMo/9cMK4oBzQwxAc6eQm0FH6DwU+GY7B5UAJcN8wnjpV9iVAVqbwxB4C3aX/MIkTrsvOUSy7SvLcHgLMkVuoYrlE2Wl7owIjC7iWghOey4JooouE4K0JOflAbQpO+ACMlFd4DDBL3qitEvNbB7Dvct5Qa057QsomnxY0k7wPQ/CjI9vl3qDA471CwrAoTifkjAD+aAxADjCLgTcuxtbIbbO6ht8OrJUpEgmKDA6waAlslvODmt9XJaydJwtjpDNCObb7ArvsB3rSQJiguQCtk5BYrfyxp8RlnpdLIHMo6q+8jrYej74qFogt0zxeb8Wa6jQSKrGg0sUBVvZ3su2+IFaUesz2rAOWE0O2ecwoFUn+rykxY5GLA6ZKu6PyeSExY7yLA6zihwvy+UkYkx7p0NXFAaoAQ3HL9t1sYkQjQ4L0t+1p24OmO3GLDu9rHKCMtq7VktPvKiUfC9oYCiROSpv+ht0h8iwxzH8rd7jB4Te1LcaCCo3x6hIEWQOcahDVtXfkGWB4+jNs8/+LJncQeYo0xj9L2usvOrT56WMZbiA0MRRDrvBYRtObCDNTY9Rnh5qiAk1b9X1kKdMYtUOzVdY5tFVZokjSWaI8p4IGKymazD2H9ioJGknWGypFdBwOW/FDOjzSOGCBoU+hQ/uqqJ4JEhqpNZS3Ddf0UVnhicTEAQkRXbVJffvEygE5cXJAhgwZMmQgpPwDJA1oReoX6yMAAAAASUVORK5CYII=" alt="Facchinaggio" style="height:54px;width:54px;">
+      <div style="color:#005999; font-weight:600;">Facchinaggio</div>
+      <span class="scopri-di-piu">
+        <a href="ScopriDiPiu.html" class="text-decoration-none" style="color:inherit;">
+          Scopri di più <i class="bi bi-arrow-right-circle"></i>
+        </a>
+      </span>
+    </a>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="footer-custom mt-5 pt-4" style="background:#f8f9fa;">
+  <div class="container">
+    <div class="row align-items-center pb-3">
+      <!-- Contatti a sinistra -->
+      <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+        <h5 class="fw-bold mb-2" style="color:#005999;">Contatti</h5>
+        <div style="font-size:1.05em; color:#222;">
+          <div><i class="bi bi-geo-alt-fill me-2" style="color:#005999;"></i>Via Roma 123, 80100 Napoli</div>
+          <div><i class="bi bi-telephone-fill me-2" style="color:#005999;"></i><a href="tel:+393895472706" style="color:#222; text-decoration:none;">+39 389 547 2706</a></div>
+          <div><i class="bi bi-envelope-fill me-2" style="color:#005999;"></i><a href="mailto:info@egidiocarlinotrasporti.it" style="color:#222; text-decoration:none;">info@egidiocarlinotrasporti.it</a></div>
+        </div>
+      </div>
+      <!-- Logo al centro (più grande) -->
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <img src="https://dl.dropboxusercontent.com/scl/fi/5so5w651pwlq3fq0hmngd/logo.png?rlkey=jbum0e25kft949025o3u91b32&st=ku874fj2" alt="Logo Egidio Carlino Trasporti" style="height:100px; margin-bottom:8px;">
+        <div style="font-size:1.1em; color:#005999; font-weight:600;">Egidio Carlino Trasporti</div>
+        <div style="font-size:0.95em; color:#222;">&copy; 2025 Tutti i diritti riservati.</div>
+      </div>
+      <!-- Orari a destra -->
+      <div class="col-md-4 text-md-end text-center">
+        <h5 class="fw-bold mb-2" style="color:#005999;">Orari di apertura</h5>
+        <div style="font-size:1.05em; color:#222;">
+          <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Lun-Ven: 08:00 - 18:00</div>
+          <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Sabato: 08:00 - 13:00</div>
+          <div><i class="bi bi-x-circle me-2" style="color:#005999;"></i>Domenica: Chiuso</div>
+        </div>
+      </div>
+    </div>
+    <!-- Riga blu con social al centro -->
+    <div class="row align-items-center">
+      <div class="col-5 d-none d-md-block">
+        <hr style="border-top:3px solid #005999; opacity:1; margin:18px 0;">
+      </div>
+      <div class="col-12 col-md-2 text-center">
+        <div style="font-size:1.08em; color:#005999; font-weight:600; margin-bottom:6px;">Seguici su</div>
+        <div>
+          <a href="https://facebook.com/" class="mx-2" title="Facebook" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACd0lEQVR4nO2Zv2sUQRTHP+evwigSrCyiAWOpTXpBxcRcCkn8BVrZif+AjUJQSA5Jo4VpbMQiJtrE/CCojZ3YGEQx9nYaE6PRxOJWBp4Qwu7czuzb3Tm4L3zhmn1vPszsm7fvoKWWgtceoArUgGlgEfgO/BWb35+A58AI0CfPBKGKLGgSWAciR/8BJoAzEqsUXQDeeyw+yQvAYJEAR4BXigBb/QLoyhviHLCSI0QkXgUu5wFgzu9QAQDRFtc03x0TaKwEiEj8QAtmpESISHwnK8SlACAi8ZUs1emn0iLMffFQSraJux/YB7QDncBRYLRBjB/AYR8QrRL7EjiQIt/VFLHmXSHOK0HMAjtS5kwDYjyQFqKidGN/kyOEMsi7tFWsT2k3hh0gXEAioDdNwEklkGOWHN3Afcn1328dYo83gtjr2cXGVZjtFoiNjPF/A7ttIFXFTjZJj5Ry9NhAakpJXltyfCniHZxWSjKXEL8iX4saOaZsIJ8V74847VKKH8lnc6KWmgjkqw1ko4lA1rVBBqT522zbdKQ9wXcd85q1JmrZA+Q0Onri0QIlarFEENNDueT9aAs2WxLINmBNs/wOlwRySPvzt98j4HXpnza7y3Ihdsf4mkfeXhuIacR+eQQtuvyuAW2NtvlpE4BMkEI9TQByKg2IOccfAgZZwEFnAwapUuA4KC+QeTzUKVPxUEBWgIN4yjSE9QBA6sBFMup2ACBDKOleiSCjKOuGwzHTAKlr7kTcX2/LBYAsucx4s3SqMzmCTAEdFKh+y5jTB+SNzJ1L03HgsYxJXUFWZfJoYgQjs8iTwE0pDHHaCTwDbgEn5JmWWiJg/QOlYrQmouYwLQAAAABJRU5ErkJggg==" alt="Facebook" style="height:36px; width:36px; vertical-align:middle; transition:transform 0.18s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <a href="https://instagram.com/" class="mx-2" title="Instagram" target="_blank">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgElEQVR4nO2Z2U8TURTG+U+YO4WiiLSAGEUjKIsKjRKFKGpcHjQUjQuRFhGkfQIhmkqI+4KaoMEIDVpwgRektEiMWFRqXEjEgFUTrdBWEPnMXKG1LIltpTNN+iXnZeZm5vude+42ExISVFBBBSVosSy7hRDSQQixE0Lgp7AzDKMPDQ3d7JN5hmFO+9E0ZgqGYap9yTyv5okLYpPHABNlIxSAdm8AbHwbJ64Y9gbgv7x8UYrMLViRyKvnhPABwLIs1M9HUdj6For7vTRkcYmIFIUHFsDjV32YlOGwBlnzlwQuQI+hC2pJRuACcGo+cQHRoojABeBUW3MdC2LjAxeA9kSnCfLzWqzOVQYmwKTqr95CZUxmYAB8HBjEVBm199CeIOcPgBWFYen6HGQWViLn+BUk79g3K0BfRgnuai5ioP+DMACStuWioLUPKtMPKJp6UNaoR6WmBipJ+owAA2nFkM1bBHnUSjRszEeHsgpdeRX8AGwo0VCDCt0zdPa+c5rsbHwAfYJ8VoCMiDjnM2LD5mNrZAINvwKk7Smg5kq0Roz+HHOraU8AyD/GfwWIiJKgyPCJZn7S/NjYGB7rWtCmuQp9YZWwAdbIC2nNG1++paZGRkbwJLcCX5KKcHvxdhRL1uLQwhThAuw8o4Wyqcdpqv1SHTXPDUy32UmoAHvrDChv1LumwQMnaeantuP2/lMBBoUAsLvmIU43G5ymOpSnaNlMbSdZvpICdE0AOOx22lPpfANsLr8Mja7DCdDdZkBZzPpp7bJU1VCZHLAO22m7Ny/MFGC5eCG/AEtk2SjVunqAU+vNBkQuiKL3ReFirCsoQ6nJgWKt0dnm0dla9CcqIGZF/AKwLIu8ay3T5v87hm7sr9Pj2NNhmnnO/NchG7333Wql24gb8ds8Nk/mYiGLXroC53RtbgB0Pfj1C+b3AxiyOZzXxsfH6TixJB5BqjhGGACEK6VVaTC//rMWzCaHwwF9cTWtfZXU86MkmUsALuKlsag/ewWfLRY349ZvVhhuN8GcpaaZL5Wme22ezPV2OoywyI9OhW7dQXTvKkNvthqW5KN4n6hAbfxWpIilPpkn/jzQcIf1ZLEUy8KjEE5Yn40THwAC+9MiwzB6ARgHFwzDPPIYgPu5wLdx4opsjwEmeqFaAOarvDL/F8Qm7vu8n8eEbeKd3mU+qKCCCirEX/oNpOLqaJHqPIUAAAAASUVORK5CYII=" alt="Instagram" style="height:36px; width:36px; vertical-align:middle; transition:transform 0.18s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+          <a href="https://tiktok.com/" class="mx-2" title="TikTok" target="_blank">
+            <img src="data:image/png;base64,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" alt="TikTok" style="height:36px; width:36px; vertical-align:middle; transition:transform 0.18s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+        </div>
+      </div>
+      <div class="col-5 d-none d-md-block">
+        <hr style="border-top:3px solid #005999; opacity:1; margin:18px 0;">
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ...existing code... -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<a href="https://wa.me/393895472706" target="_blank"
+   style="position:fixed; right:22px; bottom:22px; z-index:9999; background:#25D366; color:#fff; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.18); text-decoration:none;"
+   title="Clicca qui per parlare su WhatsApp">
+  <i class="bi bi-whatsapp" style="font-size:2.2rem;"></i>
+</a>
+<span style="position:fixed; right:90px; bottom:38px; z-index:9999; background:#25D366; color:#fff; padding:8px 16px; border-radius:18px; font-size:1.08em; font-family:sans-serif; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+  Chatta su WhatsApp!
+</span>
+
+<script>
+  // Ritarda la chiusura del dropdown di 300ms
+  document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
+    let timeout;
+    drop.addEventListener('mouseenter', function(){
+      clearTimeout(timeout);
+      drop.classList.add('show');
+      const menu = drop.querySelector('.dropdown-menu');
+      if(menu) menu.classList.add('show');
+    });
+    drop.addEventListener('mouseleave', function(){
+      timeout = setTimeout(function(){
+        drop.classList.remove('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.remove('show');
+      }, 300);
+    });
+  });
+</script>
+</body>
+</html>
