@@ -361,8 +361,8 @@ h3 {
     <div class="container-fluid">
       <div class="logo-container">
         <!-- Use local images (upload /img/logo-1200.png and /img/logo-text.png to repo) -->
-        <img src="/img/logo-1200.png" class="logo" alt="Egidio Carlino Trasporti" loading="lazy" width="200">
-        <img src="/img/logo-text.png" class="logo-text" alt="Testo CNSI" loading="lazy" width="240">
+        <img src="img/logo-1200.png" class="logo" alt="Egidio Carlino Trasporti" loading="lazy" width="200">
+        <img src="img/logo-text.png" class="logo-text" alt="Testo CNSI" loading="lazy" width="240">
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -396,7 +396,7 @@ h3 {
     <!-- Use picture with webp + jpg fallback, loading lazy -->
     <picture>
       <source srcset="/img/hero-1200.webp" type="image/webp">
-      <img src="/img/hero-1200.jpg" alt="Trasporti Edili" class="hero-bg w-100" loading="lazy" style="height:40vh; object-fit:cover;">
+      <img src="img/hero-1200.jpg" alt="Trasporti Edili" class="hero-bg w-100" loading="lazy" style="height:40vh; object-fit:cover;">
     </picture>
 
     <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
@@ -425,7 +425,7 @@ h3 {
       <div class="col-md-4 text-center">
         <picture>
           <source srcset="/img/image-12-600.webp" type="image/webp">
-          <img src="/img/image-12-600.jpg" alt="Calcinacci" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+          <img src="img/image-12-600.jpg" alt="Calcinacci" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
         </picture>
         <h5 class="fw-bold" style="color:#3076b3;">Calcinacci</h5>
       </div>
@@ -433,7 +433,7 @@ h3 {
       <div class="col-md-4 text-center">
         <picture>
           <source srcset="/img/image-13-600.webp" type="image/webp">
-          <img src="/img/image-13-600.jpg" alt="Legno" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+          <img src="img/image-13-600.jpg" alt="Legno" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
         </picture>
         <h5 class="fw-bold" style="color:#3076b3;">Legno</h5>
       </div>
@@ -441,7 +441,7 @@ h3 {
       <div class="col-md-4 text-center">
         <picture>
           <source srcset="/img/image-14-600.webp" type="image/webp">
-          <img src="/img/image-14-600.jpg" alt="Gesso" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+          <img src="img/image-14-600.jpg" alt="Gesso" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
         </picture>
         <h5 class="fw-bold" style="color:#3076b3;">Gesso</h5>
       </div>
@@ -451,7 +451,7 @@ h3 {
       <div class="col-md-3 text-center">
         <picture>
           <source srcset="/img/image-15-600.webp" type="image/webp">
-          <img src="/img/image-15-600.jpg" alt="Ferro" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+          <img src="img/image-15-600.jpg" alt="Ferro" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
         </picture>
         <h5 class="fw-bold" style="color:#3076b3;">Ferro</h5>
       </div>
@@ -459,7 +459,7 @@ h3 {
       <div class="col-md-3 text-center">
         <picture>
           <source srcset="/img/image-19-600.webp" type="image/webp">
-          <img src="/img/image-19-600.jpg" alt="Cartongesso" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+          <img src="img/image-19-600.jpg" alt="Cartongesso" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
         </picture>
         <h5 class="fw-bold" style="color:#3076b3;">Cartongesso</h5>
       </div>
@@ -467,7 +467,7 @@ h3 {
       <div class="col-md-3 text-center">
         <picture>
           <source srcset="/img/image-17-600.webp" type="image/webp">
-          <img src="/img/image-17-600.jpg" alt="Plastica" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+          <img src="img/image-17-600.jpg" alt="Plastica" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
         </picture>
         <h5 class="fw-bold" style="color:#3076b3;">Plastica</h5>
       </div>
@@ -475,7 +475,7 @@ h3 {
       <div class="col-md-3 text-center">
         <picture>
           <source srcset="/img/image-18-600.webp" type="image/webp">
-          <img src="/img/image-18-600.jpg" alt="Cartone" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+          <img src="img/image-18-600.jpg" alt="Cartone" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
         </picture>
         <h5 class="fw-bold" style="color:#3076b3;">Cartone</h5>
       </div>
@@ -497,7 +497,7 @@ h3 {
       <div class="col-lg-6 text-center">
         <picture>
           <source srcset="/img/trasporto-merci-1200.webp" type="image/webp">
-          <img src="/img/trasporto-merci-1200.jpg" alt="Trasporto materiali per edilizia" class="img-fluid rounded shadow" loading="lazy">
+          <img src="img/trasporto-merci-1200.jpg" alt="Trasporto materiali per edilizia" class="img-fluid rounded shadow" loading="lazy">
         </picture>
       </div>
     </div>
@@ -519,7 +519,7 @@ h3 {
       <div class="col-lg-6 text-center">
         <picture>
           <source srcset="/img/mc-trasporti-1200.webp" type="image/webp">
-          <img src="/img/mc-trasporti-1200.jpg" alt="MC Trasporti" class="img-fluid rounded shadow" loading="lazy">
+          <img src="img/mc-trasporti-1200.jpg" alt="MC Trasporti" class="img-fluid rounded shadow" loading="lazy">
         </picture>
       </div>
     </div>
@@ -538,7 +538,7 @@ h3 {
         </div>
 
         <div class="col-md-4 text-center mb-3 mb-md-0">
-          <img src="/img/logo-300.png" alt="Logo Egidio Carlino Trasporti" style="height:100px; object-fit:contain; margin-bottom:6px;" loading="lazy">
+          <img src="img/logo-300.png" alt="Logo Egidio Carlino Trasporti" style="height:100px; object-fit:contain; margin-bottom:6px;" loading="lazy">
           <div style="font-size:1.1em; color:#005999; font-weight:600;">Egidio Carlino Trasporti</div>
           <div style="font-size:0.95em; color:#222;">&copy; 2025 Tutti i diritti riservati.</div>
         </div>
