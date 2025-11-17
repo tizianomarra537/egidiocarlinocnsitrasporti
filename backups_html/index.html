@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Structured data for Organization (logo pointing to local img) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Egidio Carlino Trasporti",
+    "url":"https://www.egidiocarlinocnsitrasporti.it",
+    "logo":"https://www.egidiocarlinocnsitrasporti.it/img/logo-1200.png"
+  }
+  </script>
+
+  <title>Egidio Carlino Trasporti - Home</title>
+
+  <!-- Required meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trasporti edili, noleggio cassoni, facchinaggio e movimento terra — CNSI Trasporti. Interventi rapidi, personale qualificato e mezzi dedicati.">
+  <link rel="canonical" href="https://www.egidiocarlinocnsitrasporti.it/">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="/img/favicon-192.png">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+/* Reset base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f8f9fa;
+}
+
+/* Navbar / logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    margin-left: 58px;
+}
+
+/* Forza dimensioni dei loghi nella navbar (override unico e definitivo) */
+.navbar .logo {
+    height: 140px !important; /* primo logo più grande */
+    width: auto !important;
+    display: block;
+}
+.navbar .logo-text {
+    height: 64px !important;  /* secondo logo leggermente più piccolo */
+    width: auto !important;
+    display: block;
+}
+
+/* Navbar sticky: resta visibile mentre scorri */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.navbar-nav {
+    gap: 0.7em;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.2s;
+    font-size: 1.18em;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #0079A4 !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #0079A4;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+}
+
+.navbar-nav .dropdown-toggle::after,
+.navbar-nav .nav-link.dropdown-toggle::after {
+    display: none !important;
+}
+
+.navbar .btn-warning {
+    margin-left: 12px !important;
+    margin-right: 24px !important;
+    font-size: 1.08em;
+    background: #3076b3 !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 1.5em !important;
+}
+.navbar .btn-warning:hover,
+.navbar .btn-warning:focus {
+    background: #265984 !important;
+    color: #fff !important;
+}
+
+/* Dropdown menu hover behavior (visual only) */
+.navbar .dropdown:hover > .dropdown-menu,
+.navbar .dropdown:focus-within > .dropdown-menu,
+.navbar .dropdown.show > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.navbar .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s, visibility 0.22s;
+    display: block;
+    border-radius: 1em;
+    box-shadow: 0 4px 18px rgba(0,89,153,0.10);
+    border: none;
+    min-width: 220px;
+    padding: 0.5em 0;
+    margin-top: 0.5em;
+    background: #fff;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    height: 400px;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.7);
+    transition: all 0.3s;
+    will-change: transform;
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    max-width: 90vw;
+    width: 100%;
+    padding: 0 5vw;
+}
+.hero-content h1 {
+    font-size: 2.2em;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    letter-spacing: 0.5px;
+}
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* Buttons */
+.btn-primary {
+    background: #0079A4 !important;
+    border: none !important;
+    border-radius: 1.5em !important;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.btn-primary:hover {
+    background: #0079A4 !important;
+}
+.btn-warning {
+    background: #0079A4 !important;
+    border: none !important;
+    color: #fff !important;
+    border-radius: 1.5em !important;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.btn-warning:hover {
+    background: #0079A4 !important;
+    color: #fff !important;
+}
+.btn-primary,
+.btn-warning {
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.btn-primary:hover,
+.btn-warning:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 18px rgba(0,121,164,0.18);
+}
+
+/* Headings */
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #3076b3;
+}
+
+/* Images / thumbnails effects */
+.img-fluid.rounded.shadow {
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.img-fluid.rounded.shadow:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(0,121,164,0.22);
+}
+
+/* Footer */
+.footer-custom {
+    background: #f8f9fa;
+    border-top: 2px solid #0079A4;
+    color: #222;
+    font-size: 1em;
+    letter-spacing: 0.2px;
+}
+.footer-custom a:hover {
+    color: #005999;
+    text-decoration: none;
+}
+
+/* Service icons hover */
+.row .col-auto a img {
+    transition: transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+}
+.row .col-auto a:hover img {
+    transform: scale(1.13);
+    box-shadow: 0 4px 18px rgba(0,121,164,0.22);
+}
+
+/* "Scopri di più" styles */
+.scopri-di-piu {
+    color: #0079A4;
+    transition: color 0.18s, text-decoration 0.18s;
+    cursor: pointer;
+}
+.row .col-auto a:hover .scopri-di-piu {
+    color: #0079A4;
+    text-decoration: underline;
+}
+.row .col-auto a:hover {
+    text-decoration: none;
+}
+.scopri-di-piu,
+.row .col-auto a:hover .scopri-di-piu,
+.row .col-auto a:focus .scopri-di-piu,
+.row .col-auto a:active .scopri-di-piu,
+.row .col-auto a:hover span.scopri-di-piu,
+.row .col-auto a:hover span:last-child {
+    color: #0079A4 !important;
+    text-decoration: underline;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+    .hero { height: 220px; min-height: 180px; max-height: 300px; }
+    .hero-content h1 { font-size: 1.3em; }
+    .hero-content p { font-size: 1em; }
+
+    /* Mobile logo sizes (reduce) */
+    .navbar .logo { height: 192px !important; }
+    .navbar .logo-text { height: 30px !important; }
+
+    .navbar-nav .nav-link {
+        font-size: 1em;
+        padding-left: 0.3em !important;
+        padding-right: 0.3em !important;
+    }
+    .logo-container { gap: 10px; margin-left: 6px; }
+    .navbar .btn-warning { margin-left: 6px !important; margin-right: 10px !important; font-size: 1em; }
+}
+
+/* Small override for very narrow viewports */
+@media (max-width: 480px) {
+  .navbar .logo { height: 56px !important; }
+  .navbar .logo-text { height: 24px !important; }
+}
+
+.navbar .logo,
+.logo-container .logo {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: contain !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.navbar .logo-text,
+.logo-container .logo-text {
+  width: 240px !important;
+  height: 80px !important;
+  object-fit: contain !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Responsive: dimensioni ridotte ma mantenendo rapporto */
+@media (max-width: 900px) {
+  .navbar .logo,
+  .logo-container .logo {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .navbar .logo-text,
+  .logo-container .logo-text {
+    width: 144px !important; /* 60% of 240 */
+    height: 48px !important;  /* 60% of 80 */
+  }
+}
+  </style>
+
+  <meta name="google-site-verification" content="oLV0qC_okLHlg1Buq8tJlFUUrEGdJWjKtsrMOxsMC94" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <!-- Navbar per home.html e servizi.html -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
+    <div class="container-fluid">
+      <div class="logo-container">
+        <!-- Use local images (upload /img/logo-1200.png and /img/logo-text.png to repo) -->
+        <img src="/img/logo-1200.png" class="logo" alt="Egidio Carlino Trasporti" loading="lazy" width="200">
+        <img src="/img/logo-text.png" class="logo-text" alt="Testo CNSI" loading="lazy" width="240">
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+          <li class="nav-item dropdown" id="serviziDropdownLi">
+            <a class="nav-link fw-bold active dropdown-toggle" href="servizi.html" id="serviziDropdown">
+              Servizi
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
+              <li><a class="dropdown-item" href="scavi.html"><i class="bi bi-truck"></i>Scavi e movimento terra</a></li>
+              <li><a class="dropdown-item" href="trasporti.html"><i class="bi bi-box-seam"></i>Trasporto e fornitura materiali edili</a></li>
+              <li><a class="dropdown-item" href="demolizione.html"><i class="bi bi-building"></i>Demolizione</a></li>
+              <li><a class="dropdown-item" href="cassoni.html"><i class="bi bi-inboxes"></i>Noleggio Cassoni</a></li>
+              <li><a class="dropdown-item" href="deposito.html"><i class="bi bi-archive"></i>Deposito materiali edili</a></li>
+              <li><a class="dropdown-item" href="facchinaggio.html"><i class="bi bi-person-workspace"></i>Facchinaggio</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="chiSiamo.html">Chi Siamo</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="contatti.html">Contatti</a></li>
+        </ul>
+        <a class="btn btn-warning ms-4 fw-bold" href="tel:+393895472706" style="border-radius:1.5em;">+39 389 547 2706</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero position-relative mb-5">
+    <!-- Use picture with webp + jpg fallback, loading lazy -->
+    <picture>
+      <source srcset="/img/hero-1200.webp" type="image/webp">
+      <img src="/img/hero-1200.jpg" alt="Trasporti Edili" class="hero-bg w-100" loading="lazy" style="height:40vh; object-fit:cover;">
+    </picture>
+
+    <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
+      <h1 style="font-size:2.2em; font-weight:400; text-shadow:0 2px 8px rgba(0,0,0,0.25);">Trasporti per l’Edilizia e Movimento Terra</h1>
+      <p style="font-size:1.2em; text-shadow:0 2px 8px rgba(0,0,0,0.18);">
+        Siamo specializzati in trasporti edili, movimento terra e soprattutto nello smaltimento, che garantiamo sempre in modo rapido ed efficiente.<br>
+        Affidabilità, puntualità e professionalità al servizio delle imprese e dei privati.
+      </p>
+      <a href="tel:+393895472706" class="btn btn-primary btn-lg" style="background:#005999; border:none; border-radius:1.5em;">Contattaci</a>
+    </div>
+  </section>
+
+  <!-- Sezione materiali: titolo e descrizione -->
+  <section class="container py-5">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold" style="color:#005999; font-family:'Montserrat',sans-serif;">Trasporti per ogni tua esigenza</h2>
+        <p style="font-size:1.15em; color:#444; font-family:'Nunito Sans',Arial,sans-serif; max-width:700px; margin:0 auto;">
+          Offriamo il trasporto e lo smaltimento sicuro di tutti i principali materiali provenienti da cantieri edili, ristrutturazioni e demolizioni.<br>
+          Gestiamo ogni fase con professionalità, garantendo rispetto delle normative e puntualità.
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-4">
+      <div class="col-md-4 text-center">
+        <picture>
+          <source srcset="/img/image-12-600.webp" type="image/webp">
+          <img src="/img/image-12-600.jpg" alt="Calcinacci" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+        </picture>
+        <h5 class="fw-bold" style="color:#3076b3;">Calcinacci</h5>
+      </div>
+
+      <div class="col-md-4 text-center">
+        <picture>
+          <source srcset="/img/image-13-600.webp" type="image/webp">
+          <img src="/img/image-13-600.jpg" alt="Legno" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+        </picture>
+        <h5 class="fw-bold" style="color:#3076b3;">Legno</h5>
+      </div>
+
+      <div class="col-md-4 text-center">
+        <picture>
+          <source srcset="/img/image-14-600.webp" type="image/webp">
+          <img src="/img/image-14-600.jpg" alt="Gesso" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+        </picture>
+        <h5 class="fw-bold" style="color:#3076b3;">Gesso</h5>
+      </div>
+    </div>
+
+    <div class="row justify-content-center g-4 mt-2">
+      <div class="col-md-3 text-center">
+        <picture>
+          <source srcset="/img/image-15-600.webp" type="image/webp">
+          <img src="/img/image-15-600.jpg" alt="Ferro" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+        </picture>
+        <h5 class="fw-bold" style="color:#3076b3;">Ferro</h5>
+      </div>
+
+      <div class="col-md-3 text-center">
+        <picture>
+          <source srcset="/img/image-19-600.webp" type="image/webp">
+          <img src="/img/image-19-600.jpg" alt="Cartongesso" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+        </picture>
+        <h5 class="fw-bold" style="color:#3076b3;">Cartongesso</h5>
+      </div>
+
+      <div class="col-md-3 text-center">
+        <picture>
+          <source srcset="/img/image-17-600.webp" type="image/webp">
+          <img src="/img/image-17-600.jpg" alt="Plastica" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+        </picture>
+        <h5 class="fw-bold" style="color:#3076b3;">Plastica</h5>
+      </div>
+
+      <div class="col-md-3 text-center">
+        <picture>
+          <source srcset="/img/image-18-600.webp" type="image/webp">
+          <img src="/img/image-18-600.jpg" alt="Cartone" class="img-fluid rounded shadow mb-3" loading="lazy" style="height:180px; object-fit:cover;">
+        </picture>
+        <h5 class="fw-bold" style="color:#3076b3;">Cartone</h5>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione 1: testo sinistra, immagine destra -->
+  <section class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h3 class="border-bottom pb-2 mb-4" style="color:#3076b3; border-color:#005999; font-family:'Montserrat',sans-serif;">Soluzioni logistiche affidabili per il settore edile</h3>
+        <p style="font-family:'Nunito Sans',Arial,sans-serif; font-size:1.1em; line-height:1.7;">
+          CNSI Trasporti di Egidio Carlino si distingue nel panorama dei servizi professionali grazie alla sua capacità di fornire soluzioni logistiche affidabili e su misura per tutti i tipi di tr[...]
+          
+          Grazie all’esperienza maturata sul campo, sappiamo intervenire con precisione e puntualità, offrendo soluzioni logistiche su misura che permettono di risparmiare tempo e semplificare og[...]
+        </p>
+        <a href="tel:+393895472706" class="btn btn-primary btn-lg mt-3" style="background:#005999; border:none; border-radius:1.5em;">Contattaci</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <picture>
+          <source srcset="/img/trasporto-merci-1200.webp" type="image/webp">
+          <img src="/img/trasporto-merci-1200.jpg" alt="Trasporto materiali per edilizia" class="img-fluid rounded shadow" loading="lazy">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione 2: immagine sinistra, testo destra -->
+  <section class="container py-5">
+    <div class="row align-items-center g-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <h3 class="border-bottom pb-2 mb-4" style="color:#3076b3; border-color:#005999; font-family:'Montserrat',sans-serif;">Qualità e innovazione per soluzioni su misura</h3>
+        <p style="font-family:'Nunito Sans',Arial,sans-serif; font-size:1.1em; line-height:1.7;">
+          A CNSI Trasporti di Egidio Carlino, la qualità non è solo un obiettivo, ma una promessa. Ogni progetto viene curato nei minimi dettagli per garantire che le soluzioni offerte siano sempr[...]
+          Abbiamo a disposizione camion scarrabili, una soluzione che rende il servizio più flessibile e sereno: il cassone può essere lasciato sul posto e gestito con i propri tempi, senza pressi[...]
+        <br><br>
+          La nostra dedizione ci rende il partner ideale per chi cerca soluzioni affidabili e all’avanguardia.
+        </p>
+        <a href="tel:+393895472706" class="btn btn-primary btn-lg mt-3" style="background:#005999; border:none; border-radius:1.5em;">Contattaci</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <picture>
+          <source srcset="/img/mc-trasporti-1200.webp" type="image/webp">
+          <img src="/img/mc-trasporti-1200.jpg" alt="MC Trasporti" class="img-fluid rounded shadow" loading="lazy">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-custom mt-5 pt-4" style="background:#f8f9fa;">
+    <div class="container">
+      <div class="row align-items-center pb-3">
+        <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+          <h5 class="fw-bold mb-2" style="color:#005999;">Contatti</h5>
+          <div style="font-size:1.05em; color:#222;">
+            <div><i class="bi bi-geo-alt-fill me-2" style="color:#005999;"></i>Via Roma 123, 80100 Napoli</div>
+            <div><i class="bi bi-telephone-fill me-2" style="color:#005999;"></i><a href="tel:+393895472706" style="color:#222; text-decoration:none;">+39 389 547 2706</a></div>
+            <div><i class="bi bi-envelope-fill me-2" style="color:#005999;"></i><a href="mailto:info@egidiocarlinotrasporti.it" style="color:#222; text-decoration:none;">info@egidiocarlinotrasporti.it</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center mb-3 mb-md-0">
+          <img src="/img/logo-300.png" alt="Logo Egidio Carlino Trasporti" style="height:100px; object-fit:contain; margin-bottom:6px;" loading="lazy">
+          <div style="font-size:1.1em; color:#005999; font-weight:600;">Egidio Carlino Trasporti</div>
+          <div style="font-size:0.95em; color:#222;">&copy; 2025 Tutti i diritti riservati.</div>
+        </div>
+
+        <div class="col-md-4 text-md-end text-center">
+          <h5 class="fw-bold mb-2" style="color:#005999;">Orari di apertura</h5>
+          <div style="font-size:1.05em; color:#222;">
+            <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Lun-Ven: 08:00 - 18:00</div>
+            <div><i class="bi bi-clock me-2" style="color:#005999;"></i>Sabato: 08:00 - 13:00</div>
+            <div><i class="bi bi-x-circle me-2" style="color:#005999;"></i>Domenica: Chiuso</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Riga blu con social al centro (aggiunti loghi) -->
+      <div class="row align-items-center">
+        <div class="col-5 d-none d-md-block">
+          <hr style="border-top:3px solid #005999; opacity:1; margin:18px 0;">
+        </div>
+
+        <div class="col-12 col-md-2 text-center">
+          <div style="font-size:1.08em; color:#005999; font-weight:600; margin-bottom:6px;">Seguici su</div>
+          <div>
+            <a href="https://facebook.com/" class="mx-2" title="Facebook" target="_blank">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACd0lEQVR4nO2Zv2sUQRTHP+evwigSrCyiAWOpTXpBxcRcCkn8BVrZif+AjUJQSA5Jo4VpbMQiJtrE/CCo[...]" alt="Facebook">
+            </a>
+            <a href="https://instagram.com/" class="mx-2" title="Instagram" target="_blank">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgElEQVR4nO2Z2U8TURTG+U+YO4WiiLSAGEUjKIsKjRKFKGpcHjQUjQuRFhGkfQIhmkqI+4KaoMEIDVpw[...]" alt="Instagram">
+            </a>
+            <a href="https://tiktok.com/" class="mx-2" title="TikTok" target="_blank">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAANU0lEQVR4nO2Z51NU65aHvTPnfJo/ZKbOp6k6VWNABJrQuffuQBAJKgpmxRxQvJhQDBgBRQmSbAktIBJF[...]" alt="TikTok">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-5 d-none d-md-block">
+          <hr style="border-top:3px solid #005999; opacity:1; margin:18px 0;">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (loaded once at end for performance) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <a href="https://wa.me/393895472706" target="_blank"
+     style="position:fixed; right:22px; bottom:22px; z-index:9999; background:#25D366; color:#fff; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center;"
+     title="Clicca qui per parlare su WhatsApp">
+    <i class="bi bi-whatsapp" style="font-size:2.2rem;"></i>
+  </a>
+
+  <span style="position:fixed; right:90px; bottom:38px; z-index:9999; background:#25D366; color:#fff; padding:8px 16px; border-radius:18px; font-size:1.08em; font-family:sans-serif; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+    Chatta su WhatsApp!
+  </span>
+
+  <script>
+    // Ritarda la chiusura del dropdown di 300ms
+    document.querySelectorAll('.navbar .dropdown').forEach(function(drop){
+      let timeout;
+      drop.addEventListener('mouseenter', function(){
+        clearTimeout(timeout);
+        drop.classList.add('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if(menu) menu.classList.add('show');
+      });
+      drop.addEventListener('mouseleave', function(){
+        timeout = setTimeout(function(){
+          drop.classList.remove('show');
+          const menu = drop.querySelector('.dropdown-menu');
+          if(menu) menu.classList.remove('show');
+        }, 300);
+      });
+    });
+  </script>
+</body>
+</html>
