@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servizi per le imprese | Egidio Carlino Trasporti</title>
+  <meta name="description" content="Servizi professionali per imprese: gestione rifiuti, trasporti, smaltimento con FIR/FIIR e codici CER, ritiri programmati e interventi rapidi a Roma e provincia.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      color: #1f2a37;
+      background: #f4f7fb;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Manrope', 'Inter', sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .imprese-hero {
+      background: linear-gradient(120deg, rgba(0, 47, 108, 0.94), rgba(0, 121, 164, 0.9));
+      color: #fff;
+      border-radius: 0 0 2.2rem 2.2rem;
+      padding: 4.2rem 0 3.5rem;
+      margin-bottom: 2.8rem;
+    }
+    .imprese-hero p { color: #e7f2ff; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .hero-metrics {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 1.2rem;
+    }
+    .hero-metrics strong {
+      display: block;
+      font-size: 1.35rem;
+      color: #fff;
+    }
+    .section-card {
+      background: #fff;
+      border: 1px solid #d7e6f5;
+      border-radius: 1rem;
+      padding: 1.4rem;
+      height: 100%;
+      box-shadow: 0 8px 22px rgba(9, 46, 89, 0.06);
+    }
+    .section-card i {
+      color: #0a6cad;
+      font-size: 1.5rem;
+    }
+    .section-title {
+      color: #0e3d70;
+      font-size: 1.9rem;
+      margin-bottom: 0.8rem;
+    }
+    .accent-box {
+      background: #eaf4ff;
+      border-left: 4px solid #0a6cad;
+      border-radius: 0.8rem;
+      padding: 1rem 1.1rem;
+    }
+    .cta-panel {
+      background: #0e3d70;
+      color: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+    .cta-panel a.btn {
+      border-radius: 999px;
+      font-weight: 700;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+    .list-check li { margin-bottom: 0.65rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
+    <div class="container-fluid">
+      <div class="logo-container">
+        <img src="https://dl.dropboxusercontent.com/scl/fi/5so5w651pwlq3fq0hmngd/logo.png?rlkey=jbum0e25kft949025o3u91b32&st=ku874fj2" class="logo" alt="Logo">
+        <img src="https://www.dropbox.com/scl/fi/q63r8jwagrgsm2qnphnlr/image.png?rlkey=b35k6bpwohm7253ros95viuj5&st=i27hasc4&raw=1" class="logo-text" alt="Testo CNSI">
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+          <li class="nav-item dropdown" id="serviziDropdownLi">
+            <a class="nav-link fw-bold active dropdown-toggle" href="servizi.html" id="serviziDropdown">Servizi</a>
+            <ul class="dropdown-menu" aria-labelledby="serviziDropdown">
+              <li><a class="dropdown-item" href="scavi.html"><i class="bi bi-truck"></i>Scavi e movimento terra</a></li>
+              <li><a class="dropdown-item" href="trasporti.html"><i class="bi bi-box-seam"></i>Trasporto e fornitura materiali edili</a></li>
+              <li><a class="dropdown-item" href="demolizione.html"><i class="bi bi-building"></i>Demolizione</a></li>
+              <li><a class="dropdown-item" href="cassoni.html"><i class="bi bi-inboxes"></i>Noleggio Cassoni</a></li>
+              <li><a class="dropdown-item" href="deposito.html"><i class="bi bi-archive"></i>Deposito materiali edili</a></li>
+              <li><a class="dropdown-item" href="facchinaggio.html"><i class="bi bi-person-workspace"></i>Facchinaggio</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="chiSiamo.html">Chi Siamo</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold active" href="imprese.html">Per le imprese</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="contatti.html">Contatti</a></li>
+        </ul>
+        <a class="btn btn-warning ms-4 fw-bold" href="tel:+393895472706" style="border-radius:1.5em;">+39 389 547 2706</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="imprese-hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <span class="hero-badge"><i class="bi bi-briefcase-fill"></i> Soluzioni B2B a Roma e provincia</span>
+          <h1 class="display-5 fw-bold mb-3">Partner operativo per aziende, strutture ricettive e centri sportivi</h1>
+          <p class="lead mb-3">Supportiamo le imprese con servizi strutturati di trasporto, raccolta e smaltimento professionale. Organizziamo ritiri ricorrenti, pianifichiamo la logistica e interveniamo rapidamente anche in situazioni urgenti.</p>
+          <p class="mb-0">Obiettivo: continuità operativa, conformità normativa e tempi certi per ogni attività.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="hero-metrics">
+            <div class="mb-3"><strong>Servizio programmabile</strong><span>Ritiri singoli o periodici in base ai flussi reali dell'azienda.</span></div>
+            <div class="mb-3"><strong>Pronto intervento</strong><span>Supporto rapido per necessità operative e picchi improvvisi.</span></div>
+            <div><strong>Tracciabilità</strong><span>Gestione documentale completa e supporto pratico in ogni fase.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mb-5">
+    <h2 class="section-title">Settori serviti</h2>
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <article class="section-card">
+          <i class="bi bi-cone-striped mb-3 d-inline-block"></i>
+          <h3 class="h4 mb-3">Imprese edili e appaltatori</h3>
+          <p>Gestiamo materiali da cantiere, calcinacci, inerti e residui di lavorazione con pianificazione dedicata per cantieri attivi, ristrutturazioni e demolizioni.</p>
+          <ul class="mb-0 ps-3">
+            <li>Noleggio cassoni e sostituzione rapida</li>
+            <li>Coordinamento ritiri per fasi di cantiere</li>
+            <li>Supporto logistico con sopralluoghi tecnici</li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <article class="section-card">
+          <i class="bi bi-building-check mb-3 d-inline-block"></i>
+          <h3 class="h4 mb-3">B&amp;B e hotel</h3>
+          <p>Servizio discreto e organizzato per strutture ricettive, con finestre operative concordate per non interferire con ospiti e attività giornaliere.</p>
+          <ul class="mb-0 ps-3">
+            <li>Ritiri su calendario fisso o su chiamata</li>
+            <li>Gestione materiali da manutenzione ordinaria</li>
+            <li>Interventi straordinari in caso di urgenza</li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <article class="section-card">
+          <i class="bi bi-activity mb-3 d-inline-block"></i>
+          <h3 class="h4 mb-3">Centri sportivi e palestre</h3>
+          <p>Affianchiamo impianti sportivi e fitness club con servizi regolari per aree tecniche, spogliatoi, locali deposito e interventi post-manutenzione.</p>
+          <ul class="mb-0 ps-3">
+            <li>Ritiri in orari compatibili con l'apertura al pubblico</li>
+            <li>Programmazione periodica per ridurre fermi operativi</li>
+            <li>Supporto in eventi, picchi stagionali e ristrutturazioni</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mb-5">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="section-card h-100">
+          <h2 class="h3 mb-3" style="color:#0e3d70;">Consigli utili per le aziende</h2>
+          <ul class="list-check ps-3 mb-0">
+            <li><strong>Definite un referente interno:</strong> accelera comunicazioni, autorizzazioni e tempi di ritiro.</li>
+            <li><strong>Pianificate ritiri ricorrenti:</strong> previene accumuli e riduce costi di gestione d'urgenza.</li>
+            <li><strong>Separate i materiali per tipologia:</strong> migliora sicurezza in cantiere e tracciabilità documentale.</li>
+            <li><strong>Programmate sopralluoghi periodici:</strong> permette di aggiornare mezzi, volumi e frequenze reali.</li>
+            <li><strong>Conservate la documentazione:</strong> mantiene pronta la prova di conformità in caso di controllo.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="section-card h-100">
+          <h2 class="h3 mb-3" style="color:#0e3d70;">Documentazione di smaltimento</h2>
+          <p>Per le imprese è essenziale avere una gestione documentale rigorosa. Supportiamo i clienti nella compilazione e verifica dei documenti di trasporto e smaltimento, inclusi <strong>FIR/FIIR</strong> e classificazione tramite <strong>codici CER</strong>.</p>
+          <div class="accent-box mb-3">
+            <strong>Perché è importante:</strong> documenti corretti garantiscono conformità normativa, tracciabilità dei flussi e tutela dell'azienda durante verifiche ispettive.
+          </div>
+          <p class="mb-0">Su richiesta, predisponiamo check operativi per ufficio tecnico o amministrazione, con procedure chiare per ritiri ordinari e straordinari.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mb-5">
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="section-card h-100">
+          <h2 class="h3 mb-3" style="color:#0e3d70;">Servizi aziendali aggiuntivi</h2>
+          <div class="row g-3">
+            <div class="col-md-6"><div class="accent-box h-100"><strong>Ritiri ricorrenti</strong><br>Calendari settimanali o mensili adattati alla vostra operatività.</div></div>
+            <div class="col-md-6"><div class="accent-box h-100"><strong>Sopralluoghi tecnici</strong><br>Valutazione preventiva di accessi, volumi e mezzi necessari.</div></div>
+            <div class="col-md-6"><div class="accent-box h-100"><strong>Supporto logistico</strong><br>Coordinamento con cantiere, facility manager e responsabili di struttura.</div></div>
+            <div class="col-md-6"><div class="accent-box h-100"><strong>Intervento rapido</strong><br>Gestione emergenze operative con priorità e tempi certi.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <aside class="cta-panel h-100 d-flex flex-column justify-content-between">
+          <div>
+            <h2 class="h3 mb-3">Richiedi un contatto rapido</h2>
+            <p class="mb-3">Condividi tipologia di attività, volumi e frequenza desiderata: prepariamo una proposta operativa chiara e sostenibile.</p>
+            <p class="mb-0"><i class="bi bi-telephone-fill me-2"></i><a href="tel:+393895472706" class="text-white text-decoration-none fw-semibold">+39 389 547 2706</a><br><i class="bi bi-envelope-fill me-2"></i><a href="mailto:info@egidiocarlinotrasporti.it" class="text-white text-decoration-none fw-semibold">info@egidiocarlinotrasporti.it</a></p>
+          </div>
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <a href="tel:+393895472706" class="btn btn-light">Chiama ora</a>
+            <a href="contatti.html" class="btn btn-outline-light">Vai ai contatti</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-custom mt-5 pt-4" style="background:#f8f9fa;">
+    <div class="container pb-4">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-2" style="color:#005999;">Egidio Carlino Trasporti</h5>
+          <div style="color:#222;">Via di Dragoncello 1, Roma · <a href="tel:+393895472706" style="color:#222; text-decoration:none;">+39 389 547 2706</a></div>
+          <div><a href="mailto:info@egidiocarlinotrasporti.it" style="color:#222; text-decoration:none;">info@egidiocarlinotrasporti.it</a></div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div style="font-size:0.95em; color:#222;">Servizi professionali per imprese · Smaltimento, trasporti e logistica</div>
+          <div style="font-size:0.92em; color:#222;">&copy; 2025 Tutti i diritti riservati.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/393895472706" target="_blank"
+     style="position:fixed; right:22px; bottom:22px; z-index:9999; background:#25D366; color:#fff; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.18); text-decoration:none;"
+     title="Clicca qui per parlare su WhatsApp">
+    <i class="bi bi-whatsapp" style="font-size:2.2rem;"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.navbar .dropdown').forEach(function(drop) {
+      let timeout;
+      drop.addEventListener('mouseenter', function() {
+        clearTimeout(timeout);
+        drop.classList.add('show');
+        const menu = drop.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+      });
+      drop.addEventListener('mouseleave', function() {
+        timeout = setTimeout(function() {
+          drop.classList.remove('show');
+          const menu = drop.querySelector('.dropdown-menu');
+          if (menu) menu.classList.remove('show');
+        }, 300);
+      });
+    });
+  </script>
+</body>
+</html>
